@@ -1,0 +1,72 @@
+import FWCore.ParameterSet.Config as cms
+
+process = cms.Process("Demo")
+
+process.load("FWCore.MessageService.MessageLogger_cfi")
+
+process.load('Configuration.StandardSequences.GeometryDB_cff')
+process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.globaltag = 'GR_R_37X_V6D::All'
+
+
+process.load('Geometry.EcalAlgo.EcalBarrelGeometryDBReader_cfi')
+process.load('Geometry.EcalAlgo.EcalEndcapGeometryDBReader_cfi')
+process.load('Geometry.EcalAlgo.EcalPreshowerGeometryDBReader_cfi')
+
+process.EcalBarrelGeometryFromDBEP.applyAlignment = True
+process.EcalEndcapGeometryFromDBEP.applyAlignment = True
+process.EcalPreshowerGeometryFromDBEP.applyAlignment = True
+
+process.PoolDBESSource = cms.ESSource("PoolDBESSource",
+    process.CondDBSetup,
+    connect = cms.string('sqlite_file:/data1/data2/chiyi/CMSSW_3_7_0_patch1/src/AlignmentTool/Submit/run_Align/testEcalAlignments.db'),
+    toGet = cms.VPSet(
+      cms.PSet(
+        record = cms.string('EBAlignmentRcd'),
+        tag = cms.string('EB')
+      ),
+      cms.PSet(
+        record = cms.string('EEAlignmentRcd'),
+        tag = cms.string('EE')
+      ),
+      cms.PSet(
+        record = cms.string('ESAlignmentRcd'),
+        tag = cms.string('ES')
+      )
+    )
+)
+
+
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
+
+process.source = cms.Source("PoolSource",
+    skipEvents = cms.untracked.uint32(0),
+    firstEvent = cms.untracked.uint32(1),
+	fileNames = cms.untracked.vstring(
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139779_1_1_rQ5.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139780_1_1_FYO.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139781_1_1_oik.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139784_1_1_7N4.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139786_1_1_tNY.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139788_1_1_NLG.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139789_1_1_0jE.root',
+'file:/data1/data2/chiyi/CMSSW_3_7_0_patch4/src/SkimTool/Submit/DATA/mySkimDATA_Run139790_1_1_uKB.root'
+
+	)
+
+)
+
+process.load("AlignmentTool.ESAlignTool.esaligntool_cfi")
+#process.esAlignTool.DrawMagField = cms.bool(True)
+#process.esAlignTool.PrintPosition = cms.bool(True)
+
+process.esAlignTool.Cal_ESorigin_from_Geometry = cms.bool(True)
+process.esAlignTool.withRotation = cms.bool(True)
+process.esAlignTool.IterN = cms.uint32(ITERNUM)
+process.esAlignTool.e_xxlimit = cms.double(1.)
+process.esAlignTool.e_yylimit = cms.double(1.)
+process.esAlignTool.e_yxlimit = cms.double(1.)
+process.esAlignTool.winlimit = cms.double(3.)
+
+

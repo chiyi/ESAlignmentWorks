@@ -1,0 +1,23 @@
+
+Processing ReadFiles_Run2012D.C+...
+Info in <TUnixSystem::ACLiC>: creating shared library /pool/lsf/chiyi/357817703/./ReadFiles_Run2012D_C.so
+130123 14:04:23 001 Xrd: GoToAnotherServer: Going to: lxfsrc66a05.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a01.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a01.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a07.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a01.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre03a05.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a02.cern.ch:1095
+130123 14:04:24 001 Xrd: GoToAnotherServer: Going to: lxfsre05a03.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre07a01.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre03a05.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre05a01.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre03a05.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre03a05.cern.ch:1095
+130123 14:04:25 001 Xrd: GoToAnotherServer: Going to: lxfsre05a04.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsre07a05.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsrg19a01.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsre03a05.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsrc66a06.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsre05a01.cern.ch:1095
+130123 14:04:26 001 Xrd: GoToAnotherServer: Going to: lxfsrg27a03.cern.ch:1095

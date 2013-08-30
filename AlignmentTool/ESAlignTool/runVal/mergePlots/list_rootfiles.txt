@@ -1,0 +1,24 @@
+-r--(016)    352008085 2013-01-23 06:27:57 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p1.root
+-r--(016)   1080305479 2013-01-23 06:33:12 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p10.root
+-r--(016)   1399002558 2013-01-23 06:35:37 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p11.root
+-r--(016)   1415683425 2013-01-23 06:36:14 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p12.root
+-r--(016)        13117 2013-01-23 06:25:52 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p13.root
+-r--(016)   1203877690 2013-01-23 06:34:52 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p14.root
+-r--(016)   1387277540 2013-01-23 06:35:28 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p15.root
+-r--(016)        13117 2013-01-23 06:25:51 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p16.root
+-r--(016)   1398626350 2013-01-23 06:35:45 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p17.root
+-r--(016)   1313357979 2013-01-23 06:33:52 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p18.root
+-r--(016)   1220931525 2013-01-23 06:34:15 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p19.root
+-r--(016)   1426119074 2013-01-23 06:36:15 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p2.root
+-r--(016)    969053196 2013-01-23 06:32:53 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p20.root
+-r--(016)   1353463198 2013-01-23 06:38:43 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p21.root
+-r--(016)   1107218558 2013-01-23 06:35:34 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p22.root
+-r--(016)   1386119035 2013-01-23 06:35:06 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p3.root
+-r--(016)   1314871309 2013-01-23 06:34:15 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p4.root
+-r--(016)   1330192432 2013-01-23 06:34:50 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p5.root
+-r--(016)    522509441 2013-01-23 06:29:40 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p6.root
+-r--(016)   1288855722 2013-01-23 06:34:07 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p7.root
+-r--(016)   1416599565 2013-01-23 06:36:05 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p8.root
+-r--(016)   1025701062 2013-01-23 06:32:48 /store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_Validation/AlignmentFile_iter1_p9.root
+
+

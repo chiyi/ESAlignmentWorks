@@ -1,0 +1,7 @@
+#include "ESAlign.C"
+
+void runPlot()
+{
+ TChain * chn1 = new TChain("ESAlign","");
+
+

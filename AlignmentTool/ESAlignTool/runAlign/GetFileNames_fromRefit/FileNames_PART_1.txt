@@ -1,0 +1,1 @@
+ 'root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_SkimRefit/ESSkim_wRefit_p1.root',

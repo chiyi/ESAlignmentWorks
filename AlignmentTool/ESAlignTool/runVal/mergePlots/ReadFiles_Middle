@@ -1,0 +1,5 @@
+ ESpF_residualX_ALLA->Add((TH1D*)f[ind-1]->Get("ESpF_residualX"));
+ ESpR_residualY_ALLA->Add((TH1D*)f[ind-1]->Get("ESpR_residualY"));
+ ESmF_residualX_ALLA->Add((TH1D*)f[ind-1]->Get("ESmF_residualX"));
+ ESmR_residualY_ALLA->Add((TH1D*)f[ind-1]->Get("ESmR_residualY"));
+ f[ind-1]->Close();

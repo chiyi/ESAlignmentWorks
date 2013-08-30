@@ -1,0 +1,40 @@
+import FWCore.ParameterSet.Config as cms
+
+process = cms.Process("Demo")
+
+process.load("FWCore.MessageService.MessageLogger_cfi")
+
+process.load('Configuration.StandardSequences.GeometryDB_cff')
+process.load('Configuration.StandardSequences.MagneticField_AutoFromDBCurrent_cff')
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.globaltag = 'GR_R_311_V1::All'
+
+process.newTKAlignment = cms.ESSource("PoolDBESSource",
+                                        process.CondDBSetup,
+                                        connect = cms.string('frontier://FrontierProd/CMS_COND_31X_ALIGNMENT'),
+                                        timetype = cms.string('runnumber'),
+                                        toGet = cms.VPSet(cms.PSet(
+                                                record = cms.string('TrackerAlignmentRcd'),
+                                                tag = cms.string('TrackerAlignment_GR10_v4_offline')
+                                                ))
+                                        )
+process.es_prefer_trackerAlignment = cms.ESPrefer("PoolDBESSource", "newTKAlignment")
+
+process.newGlobalPosition = cms.ESSource("PoolDBESSource",
+                                          process.CondDBSetup,
+                                          connect = cms.string('frontier://FrontierProd/CMS_COND_31X_ALIGNMENT'),
+                                          toGet= cms.VPSet(cms.PSet(record = cms.string("GlobalPositionRcd"),
+                                                                     tag = cms.string('GlobalAlignment_TkRotMuonFromLastIovV2_offline'))
+                                                           )
+                                         )
+process.es_prefer_GlobalPositionDB = cms.ESPrefer("PoolDBESSource", "newGlobalPosition")
+
+
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+
+process.source = cms.Source("PoolSource",
+    skipEvents = cms.untracked.uint32(0),
+    firstEvent = cms.untracked.uint32(1),
+	fileNames = cms.untracked.vstring(
+
+

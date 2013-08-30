@@ -1,0 +1,978 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     37569,        969]
+NotebookOptionsPosition[     36634,        932]
+NotebookOutlinePosition[     36971,        947]
+CellTagsIndexPosition[     36928,        944]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rz", "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"Cos", "[", "dGamma", "]"}], 
+       RowBox[{"Sin", "[", "dGamma", "]"}], "0"},
+      {
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dGamma", "]"}]}], 
+       RowBox[{"Cos", "[", "dGamma", "]"}], "0"},
+      {"0", "0", "1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rx", "=", 
+   RowBox[{"(", GridBox[{
+      {"1", "0", "0"},
+      {"0", 
+       RowBox[{"Cos", "[", "dAlpha", "]"}], 
+       RowBox[{"Sin", "[", "dAlpha", "]"}]},
+      {"0", 
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dAlpha", "]"}]}], 
+       RowBox[{"Cos", "[", "dAlpha", "]"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ry", "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"Cos", "[", "dBeta", "]"}], "0", 
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dBeta", "]"}]}]},
+      {"0", "1", "0"},
+      {
+       RowBox[{"Sin", "[", "dBeta", "]"}], "0", 
+       RowBox[{"Cos", "[", "dBeta", "]"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {"R11", "R12", "R13"},
+       {"R21", "R22", "R23"},
+       {"R31", "R32", "R33"}
+      }], ")"}], "=", 
+    RowBox[{"Ry", ".", "Rx", ".", "Rz"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PzLocal", "=", 
+   RowBox[{
+    RowBox[{"R31", "*", "Px"}], "+", 
+    RowBox[{"R32", "*", "Py"}], "+", 
+    RowBox[{"R33", "*", "Pz"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J11", "=", 
+   RowBox[{
+    RowBox[{"-", "R11"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R31"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J12", "=", 
+   RowBox[{
+    RowBox[{"-", "R21"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R31"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J21", "=", 
+   RowBox[{
+    RowBox[{"-", "R12"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R32"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J22", "=", 
+   RowBox[{
+    RowBox[{"-", "R22"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R32"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J31", "=", 
+   RowBox[{
+    RowBox[{"-", "R13"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R33"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J32", "=", 
+   RowBox[{
+    RowBox[{"-", "R23"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R33"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J41", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Alpha", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Alpha", "*", "Yap"}], "-", 
+         RowBox[{"DR32Alpha", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Alpha", "*", "Zap"}], "-", 
+         RowBox[{"DR33Alpha", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J42", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR21Alpha", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Alpha", "*", "Yap"}], "-", 
+         RowBox[{"DR32Alpha", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Alpha", "*", "Zap"}], "-", 
+         RowBox[{"DR33Alpha", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR22Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR23Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J51", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Beta", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Beta", "*", "Yap"}], "-", 
+         RowBox[{"DR32Beta", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Beta", "*", "Zap"}], "-", 
+         RowBox[{"DR33Beta", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J52", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR21Beta", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Beta", "*", "Yap"}], "-", 
+         RowBox[{"DR32Beta", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Beta", "*", "Zap"}], "-", 
+         RowBox[{"DR33Beta", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR22Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR23Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J61", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Gamma", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Gamma", "*", "Yap"}], "-", 
+         RowBox[{"DR32Gamma", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Gamma", "*", "Zap"}], "-", 
+         RowBox[{"DR33Gamma", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"J62", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"DR21Gamma", "*", "PzLocal", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Px", "*", "R21"}], "+", 
+          RowBox[{"Py", "*", "R22"}], "+", 
+          RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"DR31Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+          RowBox[{"DR32Gamma", "*", "Yap"}], "-", 
+          RowBox[{"DR32Gamma", "*", "Ypre"}], "+", 
+          RowBox[{"DR33Gamma", "*", "Zap"}], "-", 
+          RowBox[{"DR33Gamma", "*", "Zpre"}]}], ")"}]}], "+", 
+       RowBox[{"PzLocal", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"DR22Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+          RowBox[{"DR23Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}],
+      "/", "PzLocal"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J", "=", 
+   RowBox[{"(", GridBox[{
+      {"J11", "J12"},
+      {"J21", "J22"},
+      {"J31", "J32"},
+      {"J41", "J42"},
+      {"J51", "J52"},
+      {"J61", "J62"}
+     }], ")"}]}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"JT", "=", 
+   RowBox[{"Transpose", "[", "J", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"InvV", "=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"exx", "*", "eyy"}], "-", 
+       RowBox[{"eyx", "*", "eyx"}]}], ")"}]], "*", 
+    RowBox[{"(", GridBox[{
+       {"eyy", 
+        RowBox[{"-", "eyx"}]},
+       {
+        RowBox[{"-", "eyx"}], "exx"}
+      }], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Vp", "=", 
+   RowBox[{
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"Vp1"},
+       {"Vp2"},
+       {"Vp3"},
+       {"Vp4"},
+       {"Vp5"},
+       {"Vp6"}
+      }], "\[NoBreak]", ")"}], "=", 
+    RowBox[{"J", ".", "InvV", ".", 
+     RowBox[{"(", "\[NoBreak]", GridBox[{
+        {"XD"},
+        {"YD"}
+       }], "\[NoBreak]", ")"}]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.491301382623163*^9, 3.491301383096017*^9}, {
+   3.491301545026064*^9, 3.491301580210981*^9}, {3.491301659022719*^9, 
+   3.491301664574462*^9}, 3.491711690869528*^9, {3.491718892103941*^9, 
+   3.491718897521364*^9}, {3.491815855012239*^9, 3.491815855659281*^9}, {
+   3.4919066668393497`*^9, 3.491906672040167*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp1"], "Input",
+ CellChangeTimes->{{3.491815873463655*^9, 3.491815873930447*^9}}],
+
+Cell["\<\
+YD*((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy) - 
+    (eyx*(-(Cos[dBeta]*Cos[dGamma]) + Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+       ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+             Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy)) + 
+  XD*(-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+            Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy)) + 
+    (eyy*(-(Cos[dBeta]*Cos[dGamma]) + Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+       ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+             Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491815874515903*^9, 3.491906740789337*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp2"], "Input",
+ CellChangeTimes->{{3.491815995556127*^9, 3.491815995904489*^9}}],
+
+Cell["\<\
+YD*((exx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy)) + 
+  XD*(-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) \
++ 
+           Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491815996580861*^9, 3.491906791480475*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp3"], "Input",
+ CellChangeTimes->{{3.491816136900948*^9, 3.4918161372577047`*^9}}],
+
+Cell["\<\
+YD*((exx*(-Sin[dAlpha] + (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+          Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(Cos[dAlpha]*Sin[dBeta] + 
+       (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy)) + 
+  XD*(-((eyx*(-Sin[dAlpha] + \
+(Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+           Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(Cos[dAlpha]*Sin[dBeta] + 
+       (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/(-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491816137623774*^9, 3.491906797122622*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp4"], "Input",
+ CellChangeTimes->{{3.491816172388916*^9, 3.491816172722456*^9}}],
+
+Cell["\<\
+YD*((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+          Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+         (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+       ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + \
+exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) - 
+    (eyx*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+          Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] \
++ 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) - (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + \
+(-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + 
+         Ypre*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] \
++ 
+         Zpre*Cos[dBeta]*Sin[dAlpha] + (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+            Sin[dGamma]))))/((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))) \
++ 
+  XD*(-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+        ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+             Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+            Sin[dBeta]*Sin[dGamma])) + (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+             Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+            Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + \
+exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+    (eyy*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+          Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] \
++ 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) - (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + \
+(-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + 
+         Ypre*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] \
++ 
+         Zpre*Cos[dBeta]*Sin[dAlpha] + (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+            Sin[dGamma]))))/((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))))\
+\
+\>", "Output",
+ CellChangeTimes->{3.4918161731438103`*^9, 3.4919068003275213`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp5"], "Input",
+ CellChangeTimes->{{3.4918162327313833`*^9, 3.491816233228175*^9}}],
+
+Cell["\<\
+YD*((exx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+      (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+       Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) - 
+    (eyx*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-((-Zap + \
+Zpre)*Cos[dAlpha]*Cos[dBeta]) + 
+         (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+         Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+         Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+        (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+         Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/
+     ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))) \
++ 
+  XD*(-((eyx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+       (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+        Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+        Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+        (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+    (eyy*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-((-Zap + \
+Zpre)*Cos[dAlpha]*Cos[dBeta]) + 
+         (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+         Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+         Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+        (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+         Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/
+     ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))))\
+\
+\>", "Output",
+ CellChangeTimes->{3.491816233749324*^9, 3.491906804779709*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Vp6"], "Input",
+ CellChangeTimes->{{3.491816280035323*^9, 3.4918162804568872`*^9}}],
+
+Cell["\<\
+YD*((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+        (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+       (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) \
+- 
+       (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) - 
+    (eyx*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) \
++ 
+       (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+            Sin[dGamma]))))/((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))) \
++ 
+  XD*(-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - \
+
+          Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+    (eyy*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]) + Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])) + (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) \
++ 
+       (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*
+            Sin[dGamma]))))/((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))))\
+\
+\>", "Output",
+ CellChangeTimes->{3.491816280953862*^9, 3.4919068085582447`*^9}]
+}, Open  ]]
+},
+WindowSize->{879, 947},
+WindowMargins->{{20, Automatic}, {Automatic, 25}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (November 11, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 16147, 503, 1923, "Input"],
+Cell[CellGroupData[{
+Cell[16717, 527, 95, 1, 32, "Input"],
+Cell[16815, 530, 2075, 42, 422, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18927, 577, 95, 1, 32, "Input"],
+Cell[19025, 580, 2080, 35, 456, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21142, 620, 97, 1, 32, "Input"],
+Cell[21242, 623, 1759, 31, 388, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23038, 659, 95, 1, 32, "Input"],
+Cell[23136, 662, 4591, 91, 932, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27764, 758, 97, 1, 32, "Input"],
+Cell[27864, 761, 4016, 73, 864, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31917, 839, 97, 1, 32, "Input"],
+Cell[32017, 842, 4601, 87, 966, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

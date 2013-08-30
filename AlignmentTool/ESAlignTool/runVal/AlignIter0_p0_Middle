@@ -1,0 +1,20 @@
+
+	)
+
+)
+
+process.load("AlignmentTool.ESAlignTool.esaligntool_cfi")
+#process.esAlignTool.DrawMagField = cms.bool(True)
+#process.esAlignTool.PrintPosition = cms.bool(True)
+process.esAlignTool.Overwrite_RotationMatrix_fromGeometry = cms.bool(True)
+process.esAlignTool.fromRefitter = cms.bool(True)
+
+process.esAlignTool.Cal_ESorigin_from_Geometry = cms.bool(True)
+process.esAlignTool.withRotation = cms.bool(True)
+process.esAlignTool.IterN = cms.uint32(ITERNUM)
+process.esAlignTool.e_xxlimit = cms.double(1.)
+process.esAlignTool.e_yylimit = cms.double(1.)
+process.esAlignTool.e_yxlimit = cms.double(1.)
+process.esAlignTool.winlimit = cms.double(3.)
+
+

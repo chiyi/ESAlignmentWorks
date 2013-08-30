@@ -1,0 +1,473 @@
+run();
+}
+
+void CalIter_wRotation::run()
+{
+  cout<<"Alignment on ES+Front :\n";
+  if(GetIteration(1,1,ES_dX[1][0],ES_dY[1][0],ES_dZ[1][0],ES_dAlpha[1][0],ES_dBeta[1][0],ES_dGamma[1][0])==1)
+  {
+   cout<<"dX="<<ES_dX[1][0]<<", dY="<<ES_dY[1][0]<<", dZ="<<ES_dZ[1][0]<<"\n";
+   cout<<"dAlpha="<<ES_dAlpha[1][0]<<", dBeta="<<ES_dBeta[1][0]<<", dGamma="<<ES_dGamma[1][0]<<"\n";
+   //GetIterationError(1,1,ES_dXerr[1][0],ES_dYerr[1][0],ES_dZerr[1][0]);
+   //cout<<"dXerr="<<ES_dXerr[1][0]<<", dYerr="<<ES_dYerr[1][0]<<", dZerr="<<ES_dZerr[1][0]<<"\n";
+   cout<<"normalized CHI2 before iteration="<<ES_CHI2[1][0]/ES_NTracks[1][0]<<" ";
+   cout<<"# of Tracks="<<ES_NTracks[1][0]<<"\n";
+  }
+  cout<<"Alignment on ES+Rear :\n";
+  if(GetIteration(1,2,ES_dX[1][1],ES_dY[1][1],ES_dZ[1][1],ES_dAlpha[1][1],ES_dBeta[1][1],ES_dGamma[1][1])==1)
+  {
+   cout<<"dX="<<ES_dX[1][1]<<", dY="<<ES_dY[1][1]<<", dZ="<<ES_dZ[1][1]<<"\n";
+   cout<<"dAlpha="<<ES_dAlpha[1][1]<<", dBeta="<<ES_dBeta[1][1]<<", dGamma="<<ES_dGamma[1][1]<<"\n";
+   //GetIterationError(1,2,ES_dXerr[1][1],ES_dYerr[1][1],ES_dZerr[1][1]);
+   //cout<<"dXerr="<<ES_dXerr[1][1]<<", dYerr="<<ES_dYerr[1][1]<<", dZerr="<<ES_dZerr[1][1]<<"\n";
+   cout<<"normalized CHI2 before iteration="<<ES_CHI2[1][1]/ES_NTracks[1][1]<<" ";
+   cout<<"# of Tracks="<<ES_NTracks[1][1]<<"\n";
+  }
+  cout<<"Alignment on ES-Front :\n";
+  if(GetIteration(-1,1,ES_dX[0][0],ES_dY[0][0],ES_dZ[0][0],ES_dAlpha[0][0],ES_dBeta[0][0],ES_dGamma[0][0])==1)
+  {
+   cout<<"dX="<<ES_dX[0][0]<<", dY="<<ES_dY[0][0]<<", dZ="<<ES_dZ[0][0]<<"\n";
+   cout<<"dAlpha="<<ES_dAlpha[0][0]<<", dBeta="<<ES_dBeta[0][0]<<", dGamma="<<ES_dGamma[0][0]<<"\n";
+   //GetIterationError(-1,1,ES_dXerr[0][0],ES_dYerr[0][0],ES_dZerr[0][0]);
+   //cout<<"dXerr="<<ES_dXerr[0][0]<<", dYerr="<<ES_dYerr[0][0]<<", dZerr="<<ES_dZerr[0][0]<<"\n";
+   cout<<"normalized CHI2 before iteration="<<ES_CHI2[0][0]/ES_NTracks[0][0]<<" ";
+   cout<<"# of Tracks="<<ES_NTracks[0][0]<<"\n";
+  }
+  cout<<"Alignment on ES-Rear :\n";
+  if(GetIteration(-1,2,ES_dX[0][1],ES_dY[0][1],ES_dZ[0][1],ES_dAlpha[0][1],ES_dBeta[0][1],ES_dGamma[0][1])==1)
+  {
+   cout<<"dX="<<ES_dX[0][1]<<", dY="<<ES_dY[0][1]<<", dZ="<<ES_dZ[0][1]<<"\n";
+   cout<<"dAlpha="<<ES_dAlpha[0][1]<<", dBeta="<<ES_dBeta[0][1]<<", dGamma="<<ES_dGamma[0][1]<<"\n";
+   //GetIterationError(-1,2,ES_dXerr[0][1],ES_dYerr[0][1],ES_dZerr[0][1]);
+   //cout<<"dXerr="<<ES_dXerr[0][1]<<", dYerr="<<ES_dYerr[0][1]<<", dZerr="<<ES_dZerr[0][1]<<"\n";
+   cout<<"normalized CHI2 before iteration="<<ES_CHI2[0][1]/ES_NTracks[0][1]<<" ";
+   cout<<"# of Tracks="<<ES_NTracks[0][1]<<"\n";
+  }
+
+  ofstream file;
+  file.open("file.txt",ios::out|ios::app);
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdX = cms.double("<<ES_dX[1][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdY = cms.double("<<ES_dY[1][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdZ = cms.double("<<ES_dZ[1][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdAlpha = cms.double("<<ES_dAlpha[1][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdBeta = cms.double("<<ES_dBeta[1][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpFdGamma = cms.double("<<ES_dGamma[1][0]<<")\n";
+
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdX = cms.double("<<ES_dX[1][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdY = cms.double("<<ES_dY[1][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdZ = cms.double("<<ES_dZ[1][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdAlpha = cms.double("<<ES_dAlpha[1][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdBeta = cms.double("<<ES_dBeta[1][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESpRdGamma = cms.double("<<ES_dGamma[1][1]<<")\n";
+
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdX = cms.double("<<ES_dX[0][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdY = cms.double("<<ES_dY[0][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdZ = cms.double("<<ES_dZ[0][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdAlpha = cms.double("<<ES_dAlpha[0][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdBeta = cms.double("<<ES_dBeta[0][0]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmFdGamma = cms.double("<<ES_dGamma[0][0]<<")\n";
+
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdX = cms.double("<<ES_dX[0][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdY = cms.double("<<ES_dY[0][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdZ = cms.double("<<ES_dZ[0][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdAlpha = cms.double("<<ES_dAlpha[0][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdBeta = cms.double("<<ES_dBeta[0][1]<<")\n";
+  file<<"process.esAlignTool.Iter"<<iterN<<"_ESmRdGamma = cms.double("<<ES_dGamma[0][1]<<")\n";
+
+  file<<"\n";
+  file.close();
+
+  ofstream file2;
+  file2.open("file2.txt",ios::out|ios::app);
+  file2<<"idx="<<iterN-1<<";\n";
+  file2<<"ESpFdX-="<<ES_dX[1][0]<<"; ESpFdY-="<<ES_dY[1][0]<<"; ESpFdZ-="<<ES_dZ[1][0]<<";\n";
+  file2<<"ESpFdAlpha-="<<ES_dAlpha[1][0]<<"; ESpFdBeta-="<<ES_dBeta[1][0]<<"; ESpFdGamma-="<<ES_dGamma[1][0]<<";\n";
+  file2<<"ESpFdXArray[idx]=ESpFdX; ESpFdYArray[idx]=ESpFdY; ESpFdZArray[idx]=ESpFdZ;\n";
+  file2<<"ESpFdAlphaArray[idx]=ESpFdAlpha; ESpFdBetaArray[idx]=ESpFdBeta; ESpFdGammaArray[idx]=ESpFdGamma;\n";
+  file2<<"ESpFchisqArray[idx]="<<ES_CHI2[1][0]/ES_NTracks[1][0]<<"; //";
+  file2<<ES_NTracks[1][0]<<"\n";
+
+  file2<<"ESpRdX-="<<ES_dX[1][1]<<"; ESpRdY-="<<ES_dY[1][1]<<"; ESpRdZ-="<<ES_dZ[1][1]<<";\n";
+  file2<<"ESpRdAlpha-="<<ES_dAlpha[1][1]<<"; ESpRdBeta-="<<ES_dBeta[1][1]<<"; ESpRdGamma-="<<ES_dGamma[1][1]<<";\n";
+  file2<<"ESpRdXArray[idx]=ESpRdX; ESpRdYArray[idx]=ESpRdY; ESpRdZArray[idx]=ESpRdZ;\n";
+  file2<<"ESpRdAlphaArray[idx]=ESpRdAlpha; ESpRdBetaArray[idx]=ESpRdBeta; ESpRdGammaArray[idx]=ESpRdGamma;\n";
+  file2<<"ESpRchisqArray[idx]="<<ES_CHI2[1][1]/ES_NTracks[1][1]<<"; //";
+  file2<<ES_NTracks[1][1]<<"\n";
+
+  file2<<"ESmFdX-="<<ES_dX[0][0]<<"; ESmFdY-="<<ES_dY[0][0]<<"; ESmFdZ-="<<ES_dZ[0][0]<<";\n";
+  file2<<"ESmFdAlpha-="<<ES_dAlpha[0][0]<<"; ESmFdBeta-="<<ES_dBeta[0][0]<<"; ESmFdGamma-="<<ES_dGamma[0][0]<<";\n";
+  file2<<"ESmFdXArray[idx]=ESmFdX; ESmFdYArray[idx]=ESmFdY; ESmFdZArray[idx]=ESmFdZ;\n";
+  file2<<"ESmFdAlphaArray[idx]=ESmFdAlpha; ESmFdBetaArray[idx]=ESmFdBeta; ESmFdGammaArray[idx]=ESmFdGamma;\n";
+  file2<<"ESmFchisqArray[idx]="<<ES_CHI2[0][0]/ES_NTracks[0][0]<<"; //";
+  file2<<ES_NTracks[0][0]<<"\n";
+
+  file2<<"ESmRdX-="<<ES_dX[0][1]<<"; ESmRdY-="<<ES_dY[0][1]<<"; ESmRdZ-="<<ES_dZ[0][1]<<";\n";
+  file2<<"ESmRdAlpha-="<<ES_dAlpha[0][1]<<"; ESmRdBeta-="<<ES_dBeta[0][1]<<"; ESmRdGamma-="<<ES_dGamma[0][1]<<";\n";
+  file2<<"ESmRdXArray[idx]=ESmRdX; ESmRdYArray[idx]=ESmRdY; ESmRdZArray[idx]=ESmRdZ;\n";
+  file2<<"ESmRdAlphaArray[idx]=ESmRdAlpha; ESmRdBetaArray[idx]=ESmRdBeta; ESmRdGammaArray[idx]=ESmRdGamma;\n";
+  file2<<"ESmRchisqArray[idx]="<<ES_CHI2[0][1]/ES_NTracks[0][1]<<"; //";
+  file2<<ES_NTracks[0][1]<<"\n";
+
+  file2<<"\n";
+  file2.close();
+
+}
+
+Int_t CalIter_wRotation::GetIteration(Int_t iz,Int_t ip,Double_t &IterX,Double_t &IterY,Double_t &IterZ,Double_t &IterAlpha,Double_t &IterBeta,Double_t &IterGamma)
+{
+ Int_t res=0;int a,b;
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  if( detSym(iz,ip)!=0 )
+  {
+   IterX=GetIterX(iz,ip);
+   IterY=GetIterY(iz,ip);
+   IterZ=GetIterZ(iz,ip);
+   IterAlpha=GetIterAlpha(iz,ip);
+   IterBeta=GetIterBeta(iz,ip);
+   IterGamma=GetIterGamma(iz,ip);
+   res=1;
+ }}//4planes det!=0
+
+ return res;
+}
+
+Double_t CalIter_wRotation::detSym(int iz,int ip)
+{
+ Double_t res=0.; int a,b;
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  // M={ {A B}, {C D} } B^T=C
+  // A={ {M11,M12,M13}, {M12,M22,M23}, {M13,M23,M33} }
+  // B={ {M14,M15,M16}, {M24,M25,M26}, {M34,M35,M36} }
+  Double_t M11=ES_M11[a][b];
+  Double_t M12=ES_M12[a][b];
+  Double_t M13=ES_M13[a][b];
+  Double_t M14=ES_M14[a][b];
+  Double_t M15=ES_M15[a][b];
+  Double_t M16=ES_M16[a][b];
+  Double_t M22=ES_M22[a][b];
+  Double_t M23=ES_M23[a][b];
+  Double_t M24=ES_M24[a][b];
+  Double_t M25=ES_M25[a][b];
+  Double_t M26=ES_M26[a][b];
+  Double_t M33=ES_M33[a][b];
+  Double_t M34=ES_M34[a][b];
+  Double_t M35=ES_M35[a][b];
+  Double_t M36=ES_M36[a][b];
+  Double_t M44=ES_M44[a][b];
+  Double_t M45=ES_M45[a][b];
+  Double_t M46=ES_M46[a][b];
+  Double_t M55=ES_M55[a][b];
+  Double_t M56=ES_M56[a][b];
+  Double_t M66=ES_M66[a][b];
+
+  Double_t detA=0.; Double_t dettempK=0.;
+  Double_t A[3][3];
+  A[0][0]=M11; A[0][1]=M12; A[0][2]=M13;
+  A[1][0]=M12; A[1][1]=M22; A[1][2]=M23;
+  A[2][0]=M13; A[2][1]=M23; A[2][2]=M33;
+  Double_t B[3][3];
+  B[0][0]=M14; B[0][1]=M15; B[0][2]=M16;
+  B[1][0]=M24; B[1][1]=M25; B[1][2]=M26;
+  B[2][0]=M34; B[2][1]=M35; B[2][2]=M36;
+  Double_t C[3][3];
+  C[0][0]=M14; C[0][1]=M24; C[0][2]=M34;
+  C[1][0]=M15; C[1][1]=M25; C[1][2]=M35;
+  C[2][0]=M16; C[2][1]=M26; C[2][2]=M36;
+  Double_t D[3][3];
+  D[0][0]=M44; D[0][1]=M45; D[0][2]=M46;
+  D[1][0]=M45; D[1][1]=M55; D[1][2]=M56;
+  D[2][0]=M46; D[2][1]=M56; D[2][2]=M66;
+
+  detA=detM33(A);
+  if(detA==0)   return detA;
+  
+ 
+  Double_t InvA[3][3],tmpCInvA[3][3],tmpCInvAB[3][3];
+  Double_t InvMA[3][3],InvMB[3][3],InvMC[3][3],InvMD[3][3];
+    //result of Inverse MatrixM
+  Double_t tempK[3][3]; //K = D-C.InvA.B
+  Double_t temp1[3][3],temp2[3][3];
+  Double_t zero[3][3];
+  setzeroM33(zero);
+
+  InvM33(InvA,A);
+  DotM33(tmpCInvA,C,InvA);
+  DotM33(tmpCInvAB,tmpCInvA,B);
+  AddM33(tempK,D,tmpCInvAB,-1.);
+  
+  dettempK=detM33(tempK); res=dettempK;
+  if(dettempK==0) return dettempK;
+
+  InvM33(InvMD,tempK); //result InvMD
+
+  AddM33(temp1,zero,InvMD,-1.);
+  DotM33(temp2,temp1,C);
+  DotM33(InvMC,temp2,InvA); //result InvMC
+
+  AddM33(temp1,zero,InvA,-1.);
+  DotM33(temp2,temp1,B);
+  DotM33(InvMB,temp2,InvMD); //result InvMB
+
+  DotM33(temp1,InvMB,C);
+  DotM33(temp2,temp1,InvA);
+  AddM33(InvMA,InvA,temp2,-1.); //result InvMA
+
+  //std::cout<<"P4="<<ES_P4[a][b]<<" ";
+  //std::cout<<"P5="<<ES_P5[a][b]<<" ";
+  //std::cout<<"P6="<<ES_P6[a][b]<<"\n";
+
+  for(int i=0;i<3;i++)
+  {
+   for(int j=0;j<3;j++)
+   {
+    InvM66[a][b][i][j] = InvMA[i][j];
+    InvM66[a][b][i][j+3] = InvMB[i][j];
+    InvM66[a][b][i+3][j] = InvMC[i][j];
+    InvM66[a][b][i+3][j+3] = InvMD[i][j];
+  }}
+ }
+ return res;
+}
+Double_t CalIter_wRotation::GetIterX(int iz,int ip)
+{
+ Double_t res=0.; int a,b;
+
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  
+  res=  InvM66[a][b][0][0]*ES_P1[a][b] + InvM66[a][b][0][1]*ES_P2[a][b]
+      + InvM66[a][b][0][2]*ES_P3[a][b] + InvM66[a][b][0][3]*ES_P4[a][b]
+      + InvM66[a][b][0][4]*ES_P5[a][b] + InvM66[a][b][0][5]*ES_P6[a][b] ;
+ }
+ return res;
+}
+Double_t CalIter_wRotation::GetIterY(int iz,int ip)
+{
+ Double_t res=0.; int a,b;
+
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+
+  res=  InvM66[a][b][1][0]*ES_P1[a][b] + InvM66[a][b][1][1]*ES_P2[a][b]
+      + InvM66[a][b][1][2]*ES_P3[a][b] + InvM66[a][b][1][3]*ES_P4[a][b]
+      + InvM66[a][b][1][4]*ES_P5[a][b] + InvM66[a][b][1][5]*ES_P6[a][b] ;
+ }
+ return res;
+}
+Double_t CalIter_wRotation::GetIterZ(int iz,int ip)
+{
+ Double_t res=0.; int a,b;
+
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+
+  res=  InvM66[a][b][2][0]*ES_P1[a][b] + InvM66[a][b][2][1]*ES_P2[a][b]
+      + InvM66[a][b][2][2]*ES_P3[a][b] + InvM66[a][b][2][3]*ES_P4[a][b]
+      + InvM66[a][b][2][4]*ES_P5[a][b] + InvM66[a][b][2][5]*ES_P6[a][b] ;
+ }
+ return res;
+}
+Double_t CalIter_wRotation::GetIterAlpha(int iz,int ip)
+{ 
+ Double_t res=0.; int a,b;
+  
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {  
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  
+  res=  InvM66[a][b][3][0]*ES_P1[a][b] + InvM66[a][b][3][1]*ES_P2[a][b]
+      + InvM66[a][b][3][2]*ES_P3[a][b] + InvM66[a][b][3][3]*ES_P4[a][b]
+      + InvM66[a][b][3][4]*ES_P5[a][b] + InvM66[a][b][3][5]*ES_P6[a][b] ;
+ }
+ return res;
+} 
+Double_t CalIter_wRotation::GetIterBeta(int iz,int ip)
+{
+ Double_t res=0.; int a,b;
+  
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  
+  res=  InvM66[a][b][4][0]*ES_P1[a][b] + InvM66[a][b][4][1]*ES_P2[a][b]
+      + InvM66[a][b][4][2]*ES_P3[a][b] + InvM66[a][b][4][3]*ES_P4[a][b]
+      + InvM66[a][b][4][4]*ES_P5[a][b] + InvM66[a][b][4][5]*ES_P6[a][b] ;
+ }
+ return res;
+} 
+Double_t CalIter_wRotation::GetIterGamma(int iz,int ip)
+{ 
+ Double_t res=0.; int a,b;
+  
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+   
+  res=  InvM66[a][b][5][0]*ES_P1[a][b] + InvM66[a][b][5][1]*ES_P2[a][b]
+      + InvM66[a][b][5][2]*ES_P3[a][b] + InvM66[a][b][5][3]*ES_P4[a][b]
+      + InvM66[a][b][5][4]*ES_P5[a][b] + InvM66[a][b][5][5]*ES_P6[a][b] ;
+ }
+ return res;
+}
+
+/*
+Int_t CalIter_wRotation::GetIterationError(Int_t iz,Int_t ip,Double_t &Xerr,Double_t &Yerr,Double_t &Zerr)
+{
+ Int_t res=0; int a,b;
+ if( (iz==1||iz==-1) && (ip==1||ip==2) )
+ {
+  iz==-1 ? a=0 : a=1; b=ip-1;
+  if( detSym(ES_M11[a][b],ES_M12[a][b],ES_M13[a][b],ES_M22[a][b],ES_M23[a][b],ES_M33[a][b])!=0 )
+  {
+   setInvMError(iz,ip,ES_M11[a][b],ES_M12[a][b],ES_M13[a][b],ES_M22[a][b],ES_M23[a][b],ES_M33[a][b],ES_M31Err2[a][b],ES_M32Err2[a][b],ES_M33Err2[a][b]);
+   Xerr = ES_InvM11Err2[a][b] * ES_P1Err2[a][b] + ES_InvM12Err2[a][b] * ES_P2Err2[a][b] + ES_InvM13Err2[a][b] * ES_P3Err2[a][b] ;
+   Yerr = ES_InvM12Err2[a][b] * ES_P1Err2[a][b] + ES_InvM22Err2[a][b] * ES_P2Err2[a][b] + ES_InvM23Err2[a][b] * ES_P3Err2[a][b] ;
+   Zerr = ES_InvM13Err2[a][b] * ES_P1Err2[a][b] + ES_InvM23Err2[a][b] * ES_P2Err2[a][b] + ES_InvM33Err2[a][b] * ES_P3Err2[a][b] ;
+   Xerr=sqrt(Xerr); Yerr=sqrt(Yerr); Zerr=sqrt(Zerr);
+   res=1;
+ }}
+
+ return res;
+}
+*/
+/*
+void CalIter_wRotation::setInvMError(Int_t iz,Int_t ip,Double_t M11,Double_t M12,Double_t M13,Double_t M22,Double_t M23,Double_t M33,Double_t M31Err2,Double_t M32Err2,Double_t M33Err2)
+{
+ Double_t det=detSym(M11,M12,M13,M22,M23,M33);
+ Double_t InvM11Err2=0.;Double_t InvM12Err2=0.;Double_t InvM13Err2=0.;
+ Double_t InvM22Err2=0.;Double_t InvM23Err2=0.;Double_t InvM33Err2=0.;
+  InvM11Err2
+  = ( 4*pow(M13*M22 - M12*M23,2.)*(pow(M23,4.)*M31Err2
+     + M13*M13*M23*M23*M32Err2 - 2*M23*(M22*M23*M31Err2 + M12*M13*M32Err2)*M33
+     + (M22*M22*M31Err2 + M12*M12*M32Err2)*M33*M33)
+     + pow(M13*M22 - M12*M23,4.)*M33Err2
+    )/pow(det,4.);
+  InvM12Err2
+  = ( M31Err2*pow(M13*M13*M22*M23 - M11*M23*M23*M23 - 2.*M12*M13*M22*M33
+                  + (M12*M12 + M11*M22)*M23*M33,2.)
+     + M32Err2*pow(M13*M13*M13*M22 + 2.*M11*M12*M23*M33
+                   - M13*(M12*M12*M33 + M11*(M23*M23 + M22*M33)),2.)
+     + pow(M12*M13 - M11*M23,2.)*pow(M13*M22 - M12*M23,2.)*M33Err2
+    )/pow(det,4.);
+  InvM13Err2
+  = (M31Err2
+     *pow(-(M13*M13*M22*M22) + 2.*M12*M13*M22*M23
+          +M11*M22*(M23*M23 - M22*M33) + M12*M12*(-2.*M23*M23 + M22*M33)
+      ,2.)
+     +M32Err2
+     *pow(2.*M11*M13*M22*M23 + M12*M12*M12*M33
+          - M12*(M13*M13*M22 + M11*(M23*M23 + M22*M33))
+      ,2.)
+     +pow((M12*M12 - M11*M22)*(M13*M22 - M12*M23),2.)*M33Err2
+    )/pow(det,4.);
+  InvM22Err2
+  = ( 4.*pow(M12*M13 - M11*M23,2.)*(M13*M13*M23*M23*M31Err2
+     + pow(M13,4.)*M32Err2
+     - 2.*M13*(M12*M23*M31Err2 + M11*M13*M32Err2)*M33
+     + (M12*M12*M31Err2 + M11*M11*M32Err2)*M33*M33)
+     + pow(M12*M13 - M11*M23,4.)*M33Err2
+    )/pow(det,4.);
+  InvM23Err2
+  = ( 4*M31Err2
+      *pow(-(M12*M23*(M13*M13 + M11*M23)) + M12*M12*M13*M33
+           +M11*M13*(M23*(M22 + M23) - M22*M33)
+       ,2.)
+     +M32Err2
+      *pow(-2*M12*M13*M13*M13 + M11*M12*M12*M33
+           +M11*(M13*M13*(M22 + 2.*M23) - M11*(M23*M23 + M22*M33))
+       ,2.)
+     +pow((M12*M12 - M11*M22)*(M13*M13 - M11*M23),2.)*M33Err2
+    )/pow(det,4.);
+  InvM33Err2
+  = ( 4.*pow(M12*M12 - M11*M22,2.)*(pow(M13*M22 - M12*M23,2.)*M31Err2
+     +pow(M12*M13 - M11*M23,2.)*M32Err2) + pow(M12*M12 - M11*M22,4.)*M33Err2
+    )/pow(det,4.);
+
+  int a,b;
+  if( (iz==1||iz==-1) && (ip==1||ip==2) )
+  {
+   iz==-1 ? a=0 : a=1; b=ip-1;
+   ES_InvM11Err2[a][b]=InvM11Err2;
+   ES_InvM12Err2[a][b]=InvM12Err2;
+   ES_InvM13Err2[a][b]=InvM13Err2;
+   ES_InvM22Err2[a][b]=InvM22Err2;
+   ES_InvM23Err2[a][b]=InvM23Err2;
+   ES_InvM33Err2[a][b]=InvM33Err2;
+  }
+}
+*/
+
+Double_t CalIter_wRotation::detM33(Double_t M33[3][3])
+{
+ Double_t res=0.;
+ res = -(M33[0][2]*M33[1][1]*M33[2][0]) + M33[0][1]*M33[1][2]*M33[2][0] + M33[0][2]*M33[1][0]*M33[2][1] - M33[0][0]*M33[1][2]*M33[2][1] - M33[0][1]*M33[1][0]*M33[2][2] + M33[0][0]*M33[1][1]*M33[2][2];
+ return res;
+}
+
+void CalIter_wRotation::InvM33(Double_t InvM33[3][3],Double_t M33[3][3])
+{
+ Double_t buf=0.;
+ Double_t det=detM33(M33);
+ if(det!=0.)
+ {
+  InvM33[0][0]= -(M33[1][2]*M33[2][1]) + M33[1][1]*M33[2][2];
+  InvM33[0][1]= M33[0][2]*M33[2][1] - M33[0][1]*M33[2][2];
+  InvM33[0][2]= -(M33[0][2]*M33[1][1]) + M33[0][1]*M33[1][2];
+ 
+  InvM33[1][0]= M33[1][2]*M33[2][0] - M33[1][0]*M33[2][2];
+  InvM33[1][1]= -(M33[0][2]*M33[2][0]) + M33[0][0]*M33[2][2];
+  InvM33[1][2]= M33[0][2]*M33[1][0] - M33[0][0]*M33[1][2];
+ 
+  InvM33[2][0]= -(M33[1][1]*M33[2][0]) + M33[1][0]*M33[2][1];
+  InvM33[2][1]= M33[0][1]*M33[2][0] - M33[0][0]*M33[2][1];
+  InvM33[2][2]= -(M33[0][1]*M33[1][0]) + M33[0][0]*M33[1][1];
+
+  for(int i=0;i<3;i++)
+  {
+   for(int j=0;j<3;j++)
+   {
+    InvM33[i][j] /= det;
+  }}
+ }
+}
+
+void CalIter_wRotation::DotM33(Double_t tmpC[3][3],Double_t tmpA[3][3],Double_t tmpB[3][3])
+{
+ tmpC[0][0] = tmpA[0][0]*tmpB[0][0] + tmpA[0][1]*tmpB[1][0] + tmpA[0][2]*tmpB[2][0];
+ tmpC[0][1] = tmpA[0][0]*tmpB[0][1] + tmpA[0][1]*tmpB[1][1] + tmpA[0][2]*tmpB[2][1];
+ tmpC[0][2] = tmpA[0][0]*tmpB[0][2] + tmpA[0][1]*tmpB[1][2] + tmpA[0][2]*tmpB[2][2];
+ 
+ tmpC[1][0] = tmpA[1][0]*tmpB[0][0] + tmpA[1][1]*tmpB[1][0] + tmpA[1][2]*tmpB[2][0];
+ tmpC[1][1] = tmpA[1][0]*tmpB[0][1] + tmpA[1][1]*tmpB[1][1] + tmpA[1][2]*tmpB[2][1];
+ tmpC[1][2] = tmpA[1][0]*tmpB[0][2] + tmpA[1][1]*tmpB[1][2] + tmpA[1][2]*tmpB[2][2];
+ 
+ tmpC[2][0] = tmpA[2][0]*tmpB[0][0] + tmpA[2][1]*tmpB[1][0] + tmpA[2][2]*tmpB[2][0];
+ tmpC[2][1] = tmpA[2][0]*tmpB[0][1] + tmpA[2][1]*tmpB[1][1] + tmpA[2][2]*tmpB[2][1];
+ tmpC[2][2] = tmpA[2][0]*tmpB[0][2] + tmpA[2][1]*tmpB[1][2] + tmpA[2][2]*tmpB[2][2];
+}
+
+void CalIter_wRotation::AddM33(Double_t tmpC[3][3],Double_t tmpA[3][3],Double_t tmpB[3][3],Double_t fac)
+{  
+ for(int i=0;i<3;i++)
+ {for(int j=0;j<3;j++)
+  {
+   tmpC[i][j] = tmpA[i][j] + fac * tmpB[i][j];
+ }}
+}
+
+void CalIter_wRotation::setzeroM33(Double_t tmpC[3][3])
+{
+ for(int i=0;i<3;i++)
+ {for(int j=0;j<3;j++)
+  {
+   tmpC[i][j] = 0.;
+ }}
+}
+

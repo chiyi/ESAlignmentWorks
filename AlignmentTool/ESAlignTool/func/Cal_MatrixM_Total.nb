@@ -1,0 +1,2529 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    115042,       2520]
+NotebookOptionsPosition[    112358,       2423]
+NotebookOutlinePosition[    112694,       2438]
+CellTagsIndexPosition[    112651,       2435]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rz", "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"Cos", "[", "dGamma", "]"}], 
+       RowBox[{"Sin", "[", "dGamma", "]"}], "0"},
+      {
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dGamma", "]"}]}], 
+       RowBox[{"Cos", "[", "dGamma", "]"}], "0"},
+      {"0", "0", "1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rx", "=", 
+   RowBox[{"(", GridBox[{
+      {"1", "0", "0"},
+      {"0", 
+       RowBox[{"Cos", "[", "dAlpha", "]"}], 
+       RowBox[{"Sin", "[", "dAlpha", "]"}]},
+      {"0", 
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dAlpha", "]"}]}], 
+       RowBox[{"Cos", "[", "dAlpha", "]"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ry", "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"Cos", "[", "dBeta", "]"}], "0", 
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", "dBeta", "]"}]}]},
+      {"0", "1", "0"},
+      {
+       RowBox[{"Sin", "[", "dBeta", "]"}], "0", 
+       RowBox[{"Cos", "[", "dBeta", "]"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {"R11", "R12", "R13"},
+       {"R21", "R22", "R23"},
+       {"R31", "R32", "R33"}
+      }], ")"}], "=", 
+    RowBox[{"Ry", ".", "Rx", ".", "Rz"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR11Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R11", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR12Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R12", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR13Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R13", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR21Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R21", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR22Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R22", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR23Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R23", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR31Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R31", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR32Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R32", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Alpha", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dAlpha"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Beta", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dBeta"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DR33Gamma", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"R33", ",", "dGamma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PzLocal", "=", 
+   RowBox[{
+    RowBox[{"R31", "*", "Px"}], "+", 
+    RowBox[{"R32", "*", "Py"}], "+", 
+    RowBox[{"R33", "*", "Pz"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J11", "=", 
+   RowBox[{
+    RowBox[{"-", "R11"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R31"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J12", "=", 
+   RowBox[{
+    RowBox[{"-", "R21"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R31"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J21", "=", 
+   RowBox[{
+    RowBox[{"-", "R12"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R32"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J22", "=", 
+   RowBox[{
+    RowBox[{"-", "R22"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R32"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J31", "=", 
+   RowBox[{
+    RowBox[{"-", "R13"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", "R33"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"J32", "=", 
+   RowBox[{
+    RowBox[{"-", "R23"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", "R33"}], ")"}], "/", 
+     "PzLocal"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J41", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Alpha", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Alpha", "*", "Yap"}], "-", 
+         RowBox[{"DR32Alpha", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Alpha", "*", "Zap"}], "-", 
+         RowBox[{"DR33Alpha", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J42", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR21Alpha", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Alpha", "*", "Yap"}], "-", 
+         RowBox[{"DR32Alpha", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Alpha", "*", "Zap"}], "-", 
+         RowBox[{"DR33Alpha", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR22Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR23Alpha", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J51", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Beta", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Beta", "*", "Yap"}], "-", 
+         RowBox[{"DR32Beta", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Beta", "*", "Zap"}], "-", 
+         RowBox[{"DR33Beta", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J52", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR21Beta", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R21"}], "+", 
+         RowBox[{"Py", "*", "R22"}], "+", 
+         RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Beta", "*", "Yap"}], "-", 
+         RowBox[{"DR32Beta", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Beta", "*", "Zap"}], "-", 
+         RowBox[{"DR33Beta", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR22Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR23Beta", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J61", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"DR11Gamma", "*", "PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Px", "*", "R11"}], "+", 
+         RowBox[{"Py", "*", "R12"}], "+", 
+         RowBox[{"Pz", "*", "R13"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR31Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+         RowBox[{"DR32Gamma", "*", "Yap"}], "-", 
+         RowBox[{"DR32Gamma", "*", "Ypre"}], "+", 
+         RowBox[{"DR33Gamma", "*", "Zap"}], "-", 
+         RowBox[{"DR33Gamma", "*", "Zpre"}]}], ")"}]}], "+", 
+      RowBox[{"PzLocal", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"DR12Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+         RowBox[{"DR13Gamma", "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}], 
+    "/", "PzLocal"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"J62", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"DR21Gamma", "*", "PzLocal", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "Xap"}], "+", "Xpre"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Px", "*", "R21"}], "+", 
+          RowBox[{"Py", "*", "R22"}], "+", 
+          RowBox[{"Pz", "*", "R23"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"DR31Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{"Xap", "-", "Xpre"}], ")"}]}], "+", 
+          RowBox[{"DR32Gamma", "*", "Yap"}], "-", 
+          RowBox[{"DR32Gamma", "*", "Ypre"}], "+", 
+          RowBox[{"DR33Gamma", "*", "Zap"}], "-", 
+          RowBox[{"DR33Gamma", "*", "Zpre"}]}], ")"}]}], "+", 
+       RowBox[{"PzLocal", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"DR22Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "Yap"}], "+", "Ypre"}], ")"}]}], "+", 
+          RowBox[{"DR23Gamma", "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "Zap"}], "+", "Zpre"}], ")"}]}]}], ")"}]}]}], ")"}],
+      "/", "PzLocal"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J", "=", 
+   RowBox[{"(", GridBox[{
+      {"J11", "J12"},
+      {"J21", "J22"},
+      {"J31", "J32"},
+      {"J41", "J42"},
+      {"J51", "J52"},
+      {"J61", "J62"}
+     }], ")"}]}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"JT", "=", 
+   RowBox[{"Transpose", "[", "J", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"InvV", "=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"exx", "*", "eyy"}], "-", 
+       RowBox[{"eyx", "*", "eyx"}]}], ")"}]], "*", 
+    RowBox[{"(", GridBox[{
+       {"eyy", 
+        RowBox[{"-", "eyx"}]},
+       {
+        RowBox[{"-", "eyx"}], "exx"}
+      }], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MatrixM", "=", 
+    RowBox[{
+     RowBox[{"(", GridBox[{
+        {"M11", "M12", "M13", "M14", "M15", "M16"},
+        {"M21", "M22", "M23", "M24", "M25", "M26"},
+        {"M31", "M32", "M33", "M34", "M35", "M36"},
+        {"M41", "M42", "M43", "M44", "M45", "M46"},
+        {"M51", "M52", "M53", "M54", "M55", "M56"},
+        {"M61", "M62", "M63", "M64", "M65", "M66"}
+       }], ")"}], "=", 
+     RowBox[{"J", ".", "InvV", ".", "JT"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{
+  3.4905093101798763`*^9, {3.490509715567688*^9, 3.490509715943552*^9}, {
+   3.490509748115213*^9, 3.4905097901212997`*^9}, 3.490509846120077*^9, {
+   3.490509983187442*^9, 3.4905100792041283`*^9}, {3.490510126032407*^9, 
+   3.490510144560347*^9}, {3.490511720512014*^9, 3.490511725288403*^9}, {
+   3.490515889482253*^9, 3.490516011923277*^9}, {3.490516795518057*^9, 
+   3.49051682240527*^9}, 3.490528885403719*^9, {3.491222071154386*^9, 
+   3.491222087383548*^9}, {3.491285586428618*^9, 3.4912856231064577`*^9}, {
+   3.491654386484796*^9, 3.4916545793317327`*^9}, {3.491721734914616*^9, 
+   3.4917217472171097`*^9}, {3.491810974927445*^9, 3.491811116217349*^9}, 
+   3.491815634033883*^9, {3.491905536518969*^9, 3.491905542833856*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M11"], "Input",
+ CellChangeTimes->{{3.4918111689968767`*^9, 3.4918111695244102`*^9}}],
+
+Cell["\<\
+(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - 
+       Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + 
+       Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+        Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (-(Cos[dBeta]*Cos[dGamma]) + 
+    Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+    ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+       Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+       ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491905549661786*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M12"], "Input",
+ CellChangeTimes->{{3.491813933258574*^9, 3.491813933604733*^9}}],
+
+Cell["\<\
+(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+
+       Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+       Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+        Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+    Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+       Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+        Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+       Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+       ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.4918139346362333`*^9, 3.491905623127687*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M22"], "Input",
+ CellChangeTimes->{{3.49181408678929*^9, 3.49181408879564*^9}}],
+
+Cell["\<\
+(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+
+       Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+       Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+    Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+       Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+        Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + 
+           Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+          (-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.4918142570427856`*^9, 3.4919056292862177`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M13"], "Input",
+ CellChangeTimes->{{3.4918143321781054`*^9, 3.491814332416649*^9}}],
+
+Cell["\<\
+(-Sin[dAlpha] + (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+       Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+        Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (Cos[dAlpha]*Sin[dBeta] + 
+    (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+        Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+       Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+       ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491814332865115*^9, 3.4919056377531357`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M23"], "Input",
+ CellChangeTimes->{{3.491814386815125*^9, 3.49181438710231*^9}}],
+
+Cell["\<\
+(-Sin[dAlpha] + (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+       Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+          Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (Cos[dAlpha]*Sin[dBeta] + 
+    (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+        Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + 
+           Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+          (-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+       Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+          Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491814387618932*^9, 3.491905643226522*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M33"], "Input",
+ CellChangeTimes->{{3.491814705577909*^9, 3.491814705907402*^9}}],
+
+Cell["\<\
+(-Sin[dAlpha] - (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+       Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+      Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   ((exx*(-Sin[dAlpha] - (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+          Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy) - (eyx*(Cos[dAlpha]*Sin[dBeta] - 
+       (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy)) + (Cos[dAlpha]*Sin[dBeta] - 
+    (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+     (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+        Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+      Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+   (-((eyx*(-Sin[dAlpha] - \
+(Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+           Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)) + (eyy*(Cos[dAlpha]*Sin[dBeta] - 
+       (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+          Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+          Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+        (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+           Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+     (-eyx^2 + exx*eyy))\
+\>", "Output",
+ CellChangeTimes->{3.491814706312397*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M14"], "Input",
+ CellChangeTimes->{{3.4918147774126167`*^9, 3.491814777735873*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+     ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+         Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  ((((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+        Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+            Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+        Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+        ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491814778165372*^9, 3.4919056481115847`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M24"], "Input",
+ CellChangeTimes->{{3.491814839505271*^9, 3.491814839842367*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+     ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(-(Cos[dAlpha]*Cos[dGamma]) - ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) \
++ 
+           Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] - ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  ((((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+        Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) - ((Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+           (-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))/
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] - ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491814840655809*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M34"], "Input",
+ CellChangeTimes->{{3.4918149176905622`*^9, 3.491814918790208*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+     ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(-Sin[dAlpha] + (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] \
++ 
+           Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(Cos[dAlpha]*Sin[dBeta] + 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  ((((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+        Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-Sin[dAlpha] + \
+(Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(Cos[dAlpha]*Sin[dBeta] + 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.4918149191343193`*^9, 3.491905653492269*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M44"], "Input",
+ CellChangeTimes->{{3.491814975630659*^9, 3.491814976065475*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+     ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+        ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  ((((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + (-Zap + \
+Zpre)*Sin[dAlpha]*
+        Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+        Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+       (Xap - \
+Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+       Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+       Px*(Cos[dBeta]*Cos[dGamma] - Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+          (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+            Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+           (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+         ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+         (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491814976531386*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M15"], "Input",
+ CellChangeTimes->{{3.491815163530655*^9, 3.4918151646292973`*^9}}],
+
+Cell["\<\
+((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+    (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+     Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+     Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+     (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+    ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+         Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+        (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]) + 
+       Zpre*Cos[dAlpha]*Sin[dBeta] + Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) - Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+            Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+        Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+        ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815165126026*^9, 3.491905660614828*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M25"], "Input",
+ CellChangeTimes->{{3.491815289764003*^9, 3.49181529312579*^9}}],
+
+Cell["\<\
+((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+    (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+     Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+     Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+     (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+    ((exx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) \
++ 
+           Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+        (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]) + 
+       Zpre*Cos[dAlpha]*Sin[dBeta] + Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) - Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) + ((Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+           (-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))/
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] + ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815293732616*^9, 3.491905665183813*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M35"], "Input",
+ CellChangeTimes->{{3.491815349397375*^9, 3.4918153498097982`*^9}}],
+
+Cell["\<\
+((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+    (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+     Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+     Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+     (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+    ((exx*(-Sin[dAlpha] - (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] \
++ 
+           Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(Cos[dAlpha]*Sin[dBeta] - 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+        (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]) + 
+       Zpre*Cos[dAlpha]*Sin[dBeta] + Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) - Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-Sin[dAlpha] - \
+(Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(Cos[dAlpha]*Sin[dBeta] - 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.4918153503972063`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M45"], "Input",
+ CellChangeTimes->{{3.4918153869794292`*^9, 3.4918153872847652`*^9}}],
+
+Cell["\<\
+((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+    (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+     Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+     Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+     (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+    ((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+        ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+        (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]) + 
+       Zpre*Cos[dAlpha]*Sin[dBeta] + Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) - Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+          (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+            Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+           (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+         ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+         (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815387939414*^9, 3.491905671474427*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M55"], "Input",
+ CellChangeTimes->{{3.491815428982314*^9, 3.491815429387288*^9}}],
+
+Cell["\<\
+((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+    (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+     Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+     Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+     (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*
+    ((exx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+       (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+        Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+        Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+        (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+           (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]\
+) + 
+          Zpre*Cos[dAlpha]*Sin[dBeta] + \
+Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) - \
+Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+        (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]) + 
+       Zpre*Cos[dAlpha]*Sin[dBeta] + Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) - Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + \
+
+         Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+        (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+         Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+           (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]\
+) + 
+          Zpre*Cos[dAlpha]*Sin[dBeta] + \
+Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) - \
+Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815429973736*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M16"], "Input",
+ CellChangeTimes->{{3.491815462431842*^9, 3.491815463536202*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*
+            Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dBeta]*Cos[dGamma]) + \
+Sin[dAlpha]*Sin[dBeta]*
+         Sin[dGamma] + ((Cos[dGamma]*Sin[dBeta] + \
+Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(Cos[dAlpha]*Sin[dGamma] + ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+            Px*Cos[dAlpha]*Sin[dGamma])*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + \
+
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dBeta]*Cos[dGamma]) + 
+        Sin[dAlpha]*Sin[dBeta]*Sin[dGamma] + 
+        ((Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma])*
+          (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+             Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/(Pz*Cos[dAlpha]*Cos[dBeta] \
++ 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815463983057*^9, 3.491905677210121*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M26"], "Input",
+ CellChangeTimes->{{3.4918154971644897`*^9, 3.49181549778516*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(-(Cos[dAlpha]*Cos[dGamma]) - ((Py*Cos[dAlpha]*Cos[dGamma] + \
+Pz*Sin[dAlpha] - 
+           Px*Cos[dAlpha]*Sin[dGamma])*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) \
++ 
+           Sin[dBeta]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] - ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-(Cos[dAlpha]*Cos[dGamma]) - ((Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+           (-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))/
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+        Cos[dBeta]*Sin[dGamma] - ((-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+           Sin[dBeta]*Sin[dGamma])*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815498467902*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M36"], "Input",
+ CellChangeTimes->{{3.491815551669224*^9, 3.4918155521122417`*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(-Sin[dAlpha] + (Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] \
++ 
+           Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy) - (eyx*(Cos[dAlpha]*Sin[dBeta] + 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(-Sin[dAlpha] + \
+(Cos[dAlpha]*Cos[dBeta]*(Py*Cos[dAlpha]*Cos[dGamma] + 
+            Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma]))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       (-eyx^2 + exx*eyy)) + (eyy*(Cos[dAlpha]*Sin[dBeta] + 
+        (Cos[dAlpha]*Cos[dBeta]*(-(Pz*Cos[dAlpha]*Sin[dBeta]) + 
+           Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+           Px*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      (-eyx^2 + exx*eyy)))/(Pz*Cos[dAlpha]*Cos[dBeta] + 
+    Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+    Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815552727194*^9, 3.49190568180164*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M46"], "Input",
+ CellChangeTimes->{{3.4918155986797123`*^9, 3.491815599077064*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+        ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+          (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+            Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+           (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma]) + 
+         ((-Zap + Zpre)*Cos[dAlpha] - (-Yap + Ypre)*Cos[dGamma]*Sin[dAlpha])*
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+         (-Xap + Xpre)*Sin[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*(((-Yap + Ypre)*Cos[dAlpha]*Cos[dGamma]*Sin[dBeta] + 
+          (-Zap + Zpre)*Sin[dAlpha]*Sin[dBeta])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + \
+Xpre)*Cos[dAlpha]*Sin[dBeta]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Yap*Cos[dAlpha]*Cos[dBeta]*Cos[dGamma]) + \
+Ypre*Cos[dAlpha]*Cos[dBeta]*
+           Cos[dGamma] - Zap*Cos[dBeta]*Sin[dAlpha] + \
+Zpre*Cos[dBeta]*Sin[dAlpha] + 
+          (Xap - Xpre)*Cos[dAlpha]*Cos[dBeta]*Sin[dGamma])*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815599755258*^9, 3.491815663327867*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M56"], "Input",
+ CellChangeTimes->{{3.491815703580961*^9, 3.491815703981038*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+       (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+        Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+        Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + 
+        (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+           (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]\
+) + 
+          Zpre*Cos[dAlpha]*Sin[dBeta] + \
+Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) - \
+Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*(Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+        (-(Zap*Cos[dAlpha]*Sin[dBeta]) + Zpre*Cos[dAlpha]*Sin[dBeta] + 
+         Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) - 
+         Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + Cos[dBeta]*Sin[dGamma]) + \
+
+         (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dBeta]) - Cos[dBeta]*Sin[dAlpha]*
+           Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + \
+Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-((-Zap + Zpre)*Cos[dAlpha]*Cos[dBeta]) + (-Yap + Ypre)*
+           (Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*Sin[dGamma]))*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))*(-(Zap*Cos[dAlpha]*Sin[dBeta]\
+) + 
+          Zpre*Cos[dAlpha]*Sin[dBeta] + \
+Yap*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) - \
+Ypre*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.491815704783925*^9, 3.491905687342226*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["M66"], "Input",
+ CellChangeTimes->{{3.4918157738306637`*^9, 3.491815774269466*^9}}],
+
+Cell["\<\
+(((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - Px*Cos[dAlpha]*Sin[dGamma])*
+      (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+     (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) - \
+
+     (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+       Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])))*
+    ((exx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+         (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - \
+
+          Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+        (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+      ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+        Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma]))) \
+- 
+     (eyx*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+          Cos[dBeta]*Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+          Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma])) + 
+  (((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - \
+Cos[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+      (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + Sin[dBeta]*Sin[dGamma])) + \
+
+     (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+       Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+       (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+      (-(Pz*Cos[dAlpha]*Sin[dBeta]) + Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+         Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+         Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])))*
+    (-((eyx*((Py*Cos[dAlpha]*Cos[dGamma] + Pz*Sin[dAlpha] - \
+Px*Cos[dAlpha]*Sin[dGamma])*
+          (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+           Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) \
++ 
+           (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - Sin[dBeta]*
+              Sin[dGamma])) - (-Xap + Xpre)*Cos[dAlpha]*Cos[dGamma]*
+          (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+             Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) - 
+         (-Yap + Ypre)*Cos[dAlpha]*Sin[dGamma]*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+           Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+
+           Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma]))))/
+       ((-eyx^2 + exx*eyy)*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+         Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+         Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))) + 
+     (eyy*((-Xap + Xpre)*(-(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta]) - 
+          Cos[dBeta]*Sin[dGamma])*(Pz*Cos[dAlpha]*Cos[dBeta] + 
+          Px*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (-Yap + Ypre)*(Cos[dBeta]*Cos[dGamma] - \
+Sin[dAlpha]*Sin[dBeta]*Sin[dGamma])*
+         (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])) + 
+        (Yap*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) - 
+          Ypre*(Cos[dGamma]*Sin[dBeta] + Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+          (Xap - Xpre)*(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha] - \
+Sin[dBeta]*Sin[dGamma]))*
+         (-(Pz*Cos[dAlpha]*Sin[dBeta]) + \
+Py*(Cos[dGamma]*Sin[dAlpha]*Sin[dBeta] + 
+            Cos[dBeta]*Sin[dGamma]) + Px*(Cos[dBeta]*Cos[dGamma] - 
+            Sin[dAlpha]*Sin[dBeta]*Sin[dGamma]))))/((-eyx^2 + exx*eyy)*
+       (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+          Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + 
+        Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + \
+Sin[dBeta]*Sin[dGamma])))))/
+   (Pz*Cos[dAlpha]*Cos[dBeta] + Px*(Cos[dGamma]*Sin[dBeta] + 
+      Cos[dBeta]*Sin[dAlpha]*Sin[dGamma]) + \
+Py*(-(Cos[dBeta]*Cos[dGamma]*Sin[dAlpha]) + 
+      Sin[dBeta]*Sin[dGamma]))\
+\>", "Output",
+ CellChangeTimes->{3.4918157746299133`*^9}]
+}, Open  ]]
+},
+WindowSize->{830, 945},
+WindowMargins->{{0, Automatic}, {25, Automatic}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (November 11, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 16727, 507, 2063, "Input"],
+Cell[CellGroupData[{
+Cell[17297, 531, 99, 1, 32, "Input"],
+Cell[17399, 534, 2928, 54, 677, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20364, 593, 95, 1, 32, "Input"],
+Cell[20462, 596, 2963, 55, 677, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23462, 656, 93, 1, 32, "Input"],
+Cell[23558, 659, 2981, 49, 711, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26576, 713, 97, 1, 32, "Input"],
+Cell[26676, 716, 2809, 53, 643, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29522, 774, 94, 1, 32, "Input"],
+Cell[29619, 777, 2823, 47, 677, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32479, 829, 95, 1, 32, "Input"],
+Cell[32577, 832, 2473, 44, 592, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35087, 881, 97, 1, 32, "Input"],
+Cell[35187, 884, 4199, 82, 932, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39423, 971, 95, 1, 32, "Input"],
+Cell[39521, 974, 4198, 78, 966, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43756, 1057, 97, 1, 32, "Input"],
+Cell[43856, 1060, 3891, 76, 881, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47784, 1141, 95, 1, 32, "Input"],
+Cell[47882, 1144, 6724, 130, 1527, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54643, 1279, 97, 1, 32, "Input"],
+Cell[54743, 1282, 3956, 76, 898, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58736, 1363, 94, 1, 32, "Input"],
+Cell[58833, 1366, 3979, 72, 932, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62849, 1443, 97, 1, 32, "Input"],
+Cell[62949, 1446, 3628, 70, 847, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66614, 1521, 99, 1, 32, "Input"],
+Cell[66716, 1524, 6505, 124, 1493, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73258, 1653, 95, 1, 32, "Input"],
+Cell[73356, 1656, 5973, 114, 1391, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79366, 1775, 95, 1, 32, "Input"],
+Cell[79464, 1778, 4222, 80, 949, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83723, 1863, 96, 1, 32, "Input"],
+Cell[83822, 1866, 4223, 76, 983, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88082, 1947, 97, 1, 32, "Input"],
+Cell[88182, 1950, 3913, 74, 898, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92132, 2029, 97, 1, 32, "Input"],
+Cell[92232, 2032, 6771, 128, 1544, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99040, 2165, 95, 1, 32, "Input"],
+Cell[99138, 2168, 6261, 118, 1442, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105436, 2291, 97, 1, 32, "Input"],
+Cell[105536, 2294, 6806, 126, 1561, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

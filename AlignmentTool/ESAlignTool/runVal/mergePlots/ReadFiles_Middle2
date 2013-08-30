@@ -1,0 +1,7 @@
+ ind=INDNUM;
+ f[ind-1]=TFile::Open("rfio:/castor/cern.ch/user/c/chiyi/5_2_5_p3/Jobs/Run2012B_Promptv1/AlignmentFile_iter1_pINDNUM.root");
+ ESpF_residualX_ALLA->Add((TH1D*)f[ind-1]->Get("ESpF_residualX"));
+ ESpR_residualY_ALLA->Add((TH1D*)f[ind-1]->Get("ESpR_residualY"));
+ ESmF_residualX_ALLA->Add((TH1D*)f[ind-1]->Get("ESmF_residualX"));
+ ESmR_residualY_ALLA->Add((TH1D*)f[ind-1]->Get("ESmR_residualY"));
+ f[ind-1]->Close();

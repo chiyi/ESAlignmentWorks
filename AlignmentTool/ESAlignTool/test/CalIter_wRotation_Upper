@@ -1,0 +1,73 @@
+#include <iostream>
+#include <fstream>
+
+#include "TROOT.h"
+
+
+class CalIter_wRotation
+{
+ public:
+   CalIter_wRotation();
+   void run();
+ private:
+   Double_t detSym(int,int);
+   Double_t GetIterX(int,int);
+   Double_t GetIterY(int,int);
+   Double_t GetIterZ(int,int);
+   Double_t GetIterAlpha(int,int);
+   Double_t GetIterBeta(int,int);
+   Double_t GetIterGamma(int,int);
+   Int_t GetIteration(Int_t,Int_t,Double_t &,Double_t &,Double_t &,Double_t &,Double_t &,Double_t &);
+   //void setInvMError(Int_t,Int_t,Double_t,Double_t,Double_t,Double_t,Double_t,Double_t,Double_t,Double_t,Double_t);
+   //Int_t GetIterationError(Int_t,Int_t,Double_t &,Double_t &,Double_t &);
+   Double_t detM33(Double_t [][3]);
+   void InvM33(Double_t [][3],Double_t [][3]);
+   void DotM33(Double_t [][3],Double_t [][3],Double_t [][3]);
+   void AddM33(Double_t [][3],Double_t [][3],Double_t [][3],Double_t);
+   void setzeroM33(Double_t [3][3]);
+
+   Int_t iterN;
+   Double_t ES_M11[2][2],ES_M12[2][2],ES_M13[2][2],ES_M14[2][2],ES_M15[2][2],ES_M16[2][2],ES_M22[2][2],ES_M23[2][2],ES_M24[2][2],ES_M25[2][2],ES_M26[2][2],ES_M33[2][2],ES_M34[2][2],ES_M35[2][2],ES_M36[2][2],ES_M44[2][2],ES_M45[2][2],ES_M46[2][2],ES_M55[2][2],ES_M56[2][2],ES_M66[2][2];
+   Double_t ES_P1[2][2],ES_P2[2][2],ES_P3[2][2],ES_P4[2][2],ES_P5[2][2],ES_P6[2][2];
+
+   Double_t InvM66[2][2][6][6];
+   Double_t ES_CHI2[2][2];
+   Int_t ES_NTracks[2][2];
+   Double_t ES_dX[2][2],ES_dY[2][2],ES_dZ[2][2];
+   Double_t ES_dAlpha[2][2],ES_dBeta[2][2],ES_dGamma[2][2];
+   //Double_t ES_dXerr[2][2],ES_dYerr[2][2],ES_dZerr[2][2];
+   //Double_t ES_M31Err2[2][2],ES_M32Err2[2][2],ES_M33Err2[2][2];
+   //Double_t ES_P1Err2[2][2],ES_P2Err2[2][2],ES_P3Err2[2][2];
+   //Double_t ES_InvM11Err2[2][2],ES_InvM12Err2[2][2],ES_InvM13Err2[2][2],ES_InvM22Err2[2][2],ES_InvM23Err2[2][2],ES_InvM33Err2[2][2];
+};
+
+CalIter_wRotation::CalIter_wRotation()
+{
+   iterN=0;
+   for(int i=0;i<2;i++)
+   {for(int j=0;j<2;j++)
+    {
+     ES_M11[i][j]=0.; ES_M12[i][j]=0.; ES_M13[i][j]=0.;
+     ES_M14[i][j]=0.; ES_M15[i][j]=0.; ES_M16[i][j]=0.;
+     ES_M22[i][j]=0.; ES_M23[i][j]=0.; ES_M24[i][j]=0.;
+     ES_M25[i][j]=0.; ES_M26[i][j]=0.;
+     ES_M33[i][j]=0.; ES_M34[i][j]=0.; ES_M35[i][j]=0.;
+     ES_M36[i][j]=0.;
+     ES_M44[i][j]=0.; ES_M45[i][j]=0.; ES_M46[i][j]=0.;
+     ES_M55[i][j]=0.; ES_M56[i][j]=0.;
+     ES_M66[i][j]=0.;
+  
+     ES_P1[i][j]=0.; ES_P2[i][j]=0.; ES_P3[i][j]=0.;
+     ES_P4[i][j]=0.; ES_P5[i][j]=0.; ES_P6[i][j]=0.;
+
+     ES_CHI2[i][j]=0.;
+     ES_dX[i][j]=0.; ES_dY[i][j]=0.; ES_dZ[i][j]=0.;
+     ES_dAlpha[i][j]=0.; ES_dBeta[i][j]=0.; ES_dGamma[i][j]=0.;
+     //ES_dXerr[i][j]=0.; ES_dYerr[i][j]=0.; ES_dZerr[i][j]=0.;
+     ES_NTracks[i][j]=0;
+     //ES_M31Err2[i][j]=0.; ES_M32Err2[i][j]=0.; ES_M33Err2[i][j]=0.;
+     //ES_P1Err2[i][j]=0.; ES_P2Err2[i][j]=0.; ES_P3Err2[i][j]=0.;
+     //ES_InvM11Err2[i][j]=0.; ES_InvM12Err2[i][j]=0.; ES_InvM13Err2[i][j]=0.;
+     //ES_InvM22Err2[i][j]=0.; ES_InvM23Err2[i][j]=0.; ES_InvM33Err2[i][j]=0.;
+   }}
+

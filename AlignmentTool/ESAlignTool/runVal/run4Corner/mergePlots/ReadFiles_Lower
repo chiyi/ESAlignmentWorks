@@ -1,0 +1,22 @@
+//---Lower
+
+ TFile *fw=new TFile("AddedPlots.root","RECREATE");
+ fw->cd();
+ h_ESpF_resiX_Right_ALL->Write();
+ h_ESpF_resiX_Left_ALL->Write();
+ h_ESpF_resiX_Top_ALL->Write();
+ h_ESpF_resiX_Bottom_ALL->Write();
+ h_ESpR_resiY_Right_ALL->Write();
+ h_ESpR_resiY_Left_ALL->Write();
+ h_ESpR_resiY_Top_ALL->Write();
+ h_ESpR_resiY_Bottom_ALL->Write();
+ h_ESmF_resiX_Right_ALL->Write();
+ h_ESmF_resiX_Left_ALL->Write();
+ h_ESmF_resiX_Top_ALL->Write();
+ h_ESmF_resiX_Bottom_ALL->Write();
+ h_ESmR_resiY_Right_ALL->Write();
+ h_ESmR_resiY_Left_ALL->Write();
+ h_ESmR_resiY_Top_ALL->Write();
+ h_ESmR_resiY_Bottom_ALL->Write();
+
+}

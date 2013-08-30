@@ -1,0 +1,14 @@
+#include "TROOT.h"
+#include "TH1D.h"
+#include "TFile.h"
+
+void ReadFiles_Run2012D()
+{
+ TH1D *ESpF_residualX_ALLA=new TH1D("ESpF_residualX_ALLA","",300,-15,15);
+ TH1D *ESpR_residualY_ALLA=new TH1D("ESpR_residualY_ALLA","",300,-15,15);
+ TH1D *ESmF_residualX_ALLA=new TH1D("ESmF_residualX_ALLA","",300,-15,15);
+ TH1D *ESmR_residualY_ALLA=new TH1D("ESmR_residualY_ALLA","",300,-15,15);
+
+ TFile *f[2000];
+ int ind=0;
+

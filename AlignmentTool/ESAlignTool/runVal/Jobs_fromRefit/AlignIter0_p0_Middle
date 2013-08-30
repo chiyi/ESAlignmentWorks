@@ -1,0 +1,24 @@
+
+	)
+
+)
+
+#import FWCore.PythonUtilities.LumiList as LumiList
+#process.source.lumisToProcess = LumiList.LumiList(filename = 'Cert_190456-196531_8TeV_29Jun2012ReReco_Collisions12_JSON.txt').getVLuminosityBlockRange()
+
+
+process.load("AlignmentTool.ESAlignTool.esaligntool_cfi")
+#process.esAlignTool.DrawMagField = cms.bool(True)
+#process.esAlignTool.PrintPosition = cms.bool(True)
+process.esAlignTool.Overwrite_RotationMatrix_fromGeometry = cms.bool(True)
+process.esAlignTool.fromRefitter = cms.bool(True)
+
+process.esAlignTool.Cal_ESorigin_from_Geometry = cms.bool(True)
+process.esAlignTool.withRotation = cms.bool(True)
+process.esAlignTool.IterN = cms.uint32(ITERNUM)
+process.esAlignTool.e_xxlimit = cms.double(1.)
+process.esAlignTool.e_yylimit = cms.double(1.)
+process.esAlignTool.e_yxlimit = cms.double(1.)
+process.esAlignTool.winlimit = cms.double(3.)
+
+

@@ -1,0 +1,9 @@
+//---Lower
+
+ TFile *fw=new TFile("AddedPlots.root","RECREATE");
+ fw->cd();
+ ESpF_residualX_ALLA->Write();
+ ESpR_residualY_ALLA->Write();
+ ESmF_residualX_ALLA->Write();
+ ESmR_residualY_ALLA->Write();
+}

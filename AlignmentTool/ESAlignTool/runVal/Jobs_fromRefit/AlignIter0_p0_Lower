@@ -1,0 +1,6 @@
+#process.p1 = cms.Path(process.TrackRefitter)
+
+process.p = cms.Path(process.esAlignTool)
+
+#process.schedule = cms.Schedule( process.p1 , process.p)
+

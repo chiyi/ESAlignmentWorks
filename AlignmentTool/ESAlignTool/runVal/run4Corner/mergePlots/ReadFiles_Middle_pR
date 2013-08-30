@@ -1,0 +1,5 @@
+ h_ESpR_resiY_Right_ALL->Add((TH1D*)f_pR[ind-1]->Get("h_ESpR_resiY_Right"));
+ h_ESpR_resiY_Left_ALL->Add((TH1D*)f_pR[ind-1]->Get("h_ESpR_resiY_Left"));
+ h_ESpR_resiY_Top_ALL->Add((TH1D*)f_pR[ind-1]->Get("h_ESpR_resiY_Top"));
+ h_ESpR_resiY_Bottom_ALL->Add((TH1D*)f_pR[ind-1]->Get("h_ESpR_resiY_Bottom"));
+ f_pR[ind-1]->Close();

@@ -1,0 +1,13 @@
+process.esAlignTool.Iter1_ESpFdAlpha = cms.double(0.0017)
+process.esAlignTool.Iter1_ESpFdBeta = cms.double(0.0000)
+process.esAlignTool.Iter1_ESpFdGamma = cms.double(-0.00164)
+process.esAlignTool.Iter1_ESpRdAlpha = cms.double(0.0017)
+process.esAlignTool.Iter1_ESpRdBeta = cms.double(-0.0001)
+process.esAlignTool.Iter1_ESpRdGamma = cms.double(-0.00138)
+process.esAlignTool.Iter1_ESmFdAlpha = cms.double(-0.0016)
+process.esAlignTool.Iter1_ESmFdBeta = cms.double(-0.0009)
+process.esAlignTool.Iter1_ESmFdGamma = cms.double(-0.00226)
+process.esAlignTool.Iter1_ESmRdAlpha = cms.double(-0.0017)
+process.esAlignTool.Iter1_ESmRdBeta = cms.double(-0.0005)
+process.esAlignTool.Iter1_ESmRdGamma = cms.double(-0.00173)
+

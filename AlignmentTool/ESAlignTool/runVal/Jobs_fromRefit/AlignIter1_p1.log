@@ -1,0 +1,98 @@
+24-Jan-2013 06:08:12 CET  Initiating request to open file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_SkimRefit/ESSkim_wRefit_p1.root
+130124 06:08:12 14632 Xrd: GoToAnotherServer: Going to: lxfsre03a06.cern.ch:1095
+24-Jan-2013 06:08:13 CET  Successfully opened file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_SkimRefit/ESSkim_wRefit_p1.root
+In ESAlignTool Constructor
+In ESAlignTool.beginJob
+Begin processing the 1st record. Run 203832, Event 563702, LumiSection 1 at 24-Jan-2013 06:08:16.221 CET
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 477
+
+Setting ES local origins... 
+ESmF_O(-0.0400472,-0.779014,-304.626)
+ESpF_O(0.51047,-0.97953,304.356)
+ESmR_O(-0.0899529,-0.749154,-309.286)
+ESpR_O(0.510375,-0.949295,309.206)
+
+
+
+Setting ES local axes... 
+ESmF_O_R:
+1, 0.000450208, -0.000100007)
+-0.000449999, 0.999998, 0.00210006)
+0.000100952, -0.00210002, 0.999998)
+ESmR_O_R:
+1, -7.01793e-05, 9.99998e-05)
+6.99988e-05, 0.999998, 0.00180001)
+-0.000100126, -0.0018, 0.999998)
+ESpF_O_R:
+0.999999, 0.000608999, -0.00099997)
+-0.000610003, 0.999999, -0.000999998)
+0.00099936, 0.00100061, 0.999999)
+ESpR_O_R:
+0.999999, 0.000618797, -0.000799999)
+-0.000620002, 0.999999, -0.00149996)
+0.00079907, 0.00150045, 0.999999)
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 888
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 651
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 333
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 773
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 587
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 263
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 632
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 789
+In ESAlignTool.analyze
+ESAlignTool:: in analyze().
+Pass EvtRun Selection.
+ number of tracks 834
+24-Jan-2013 06:08:27 CET  Closed file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_6/Run2012D_SkimRefit/ESSkim_wRefit_p1.root
+In ESAlignTool.endJob
+
+ --------------------------------------------- 
+ number of events processed  10
+ Last Event number # 666374
+ --------------------------------------------- 
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 fileAction           -s file_close                             1        1
+    2 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 fileAction           PostEndRun                        
+    2 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+System                  3                   3
+In ESAlignTool destructor

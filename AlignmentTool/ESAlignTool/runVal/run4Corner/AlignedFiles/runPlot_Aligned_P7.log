@@ -1,0 +1,40 @@
+Sender: LSF System <lsfadmin@lxbsu2910>
+Subject: Job 358108561: </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/AlignedFiles/runPlot_Aligned_P7.sh> in cluster batch Done
+
+Job </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/AlignedFiles/runPlot_Aligned_P7.sh> was submitted from host <lxplus305> by user <chiyi> in cluster <batch>.
+Job was executed on host(s) <lxbsu2910>, in queue <cmscaf1nh>, as user <chiyi> in cluster <batch>.
+</afs/cern.ch/user/c/chiyi> was used as the home directory.
+</afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/AlignedFiles> was used as the working directory.
+Started at Thu Jan 24 06:26:30 2013
+Results reported at Thu Jan 24 06:27:55 2013
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/AlignedFiles/runPlot_Aligned_P7.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :     39.63 sec.
+    Max Memory :       142 MB
+    Max Swap   :       317 MB
+
+    Max Processes  :         7
+    Max Threads    :        12
+
+The output (if any) follows:
+
+
+Job finished at Thu Jan 24 06:27:52 CET 2013 on node 
+ under linux version Scientific Linux CERN SLC release 5.8 (Boron)
+
+
+CERN statistics: This job used 0:01:11 NCU hours (71 NCU seconds)
+
+CERN statistics: This job used 0:01:11 KSI2K hours (71 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

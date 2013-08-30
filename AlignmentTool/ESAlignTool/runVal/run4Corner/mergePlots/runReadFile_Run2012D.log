@@ -1,0 +1,80 @@
+Sender: LSF System <lsfadmin@lxbst2807>
+Subject: Job 358127735: </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh> in cluster batch Done
+
+Job </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh> was submitted from host <lxplus305> by user <chiyi> in cluster <batch>.
+Job was executed on host(s) <lxbst2807>, in queue <cmscaf1nh>, as user <chiyi> in cluster <batch>.
+</afs/cern.ch/user/c/chiyi> was used as the home directory.
+</afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots> was used as the working directory.
+Started at Thu Jan 24 08:08:38 2013
+Results reported at Thu Jan 24 08:09:05 2013
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :      4.43 sec.
+    Max Memory :         2 MB
+    Max Swap   :        30 MB
+
+    Max Processes  :         1
+    Max Threads    :         1
+
+The output (if any) follows:
+
+
+Job finished at Thu Jan 24 08:09:02 CET 2013 on node 
+ under linux version Scientific Linux CERN SLC release 5.8 (Boron)
+
+
+CERN statistics: This job used 0:00:06 NCU hours (6 NCU seconds)
+
+CERN statistics: This job used 0:00:06 KSI2K hours (6 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU
+Sender: LSF System <lsfadmin@lxbst2804>
+Subject: Job 358128442: </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh> in cluster batch Done
+
+Job </afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh> was submitted from host <lxplus305> by user <chiyi> in cluster <batch>.
+Job was executed on host(s) <lxbst2804>, in queue <cmscaf1nh>, as user <chiyi> in cluster <batch>.
+</afs/cern.ch/user/c/chiyi> was used as the home directory.
+</afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots> was used as the working directory.
+Started at Thu Jan 24 08:11:34 2013
+Results reported at Thu Jan 24 08:12:06 2013
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/afs/cern.ch/user/c/chiyi/scratch0/ESAlignment/CMSSW_5_3_6/src/AlignmentTool/ESAlignTool/runVal/run4Corner/mergePlots/runReadFile_Run2012D.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :      5.36 sec.
+    Max Memory :         2 MB
+    Max Swap   :        30 MB
+
+    Max Processes  :         1
+    Max Threads    :         1
+
+The output (if any) follows:
+
+
+Job finished at Thu Jan 24 08:12:05 CET 2013 on node 
+ under linux version Scientific Linux CERN SLC release 5.8 (Boron)
+
+
+CERN statistics: This job used 0:00:08 NCU hours (8 NCU seconds)
+
+CERN statistics: This job used 0:00:08 KSI2K hours (8 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU
