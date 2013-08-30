@@ -1,0 +1,331 @@
+18-Jul-2013 10:22:14 CEST  Initiating request to open file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_2_p4/small_Run2012D_bkup/00DE8F3C-890B-E211-8285-001D09F2AD4D.root
+130718 10:22:14 8050 Xrd: GoToAnotherServer: Going to: lxfsrk48c02.cern.ch:1095
+18-Jul-2013 10:22:18 CEST  Successfully opened file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_2_p4/small_Run2012D_bkup/00DE8F3C-890B-E211-8285-001D09F2AD4D.root
+In ESHitSkimLoose Constructor
+In ESHitSkimLoose.beginJob
+Begin processing the 1st record. Run 203832, Event 563702, LumiSection 1 at 18-Jul-2013 10:22:23.046 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 483
+Begin processing the 2nd record. Run 203832, Event 648030, LumiSection 1 at 18-Jul-2013 10:22:25.486 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 904
+Begin processing the 3rd record. Run 203832, Event 761086, LumiSection 1 at 18-Jul-2013 10:22:25.728 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 655
+Begin processing the 4th record. Run 203832, Event 699190, LumiSection 1 at 18-Jul-2013 10:22:25.902 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 336
+Begin processing the 5th record. Run 203832, Event 269750, LumiSection 1 at 18-Jul-2013 10:22:26.010 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 790
+Begin processing the 6th record. Run 203832, Event 851150, LumiSection 1 at 18-Jul-2013 10:22:26.223 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 589
+Begin processing the 7th record. Run 203832, Event 210286, LumiSection 1 at 18-Jul-2013 10:22:26.383 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 263
+Begin processing the 8th record. Run 203832, Event 251478, LumiSection 1 at 18-Jul-2013 10:22:26.468 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 643
+Begin processing the 9th record. Run 203832, Event 450054, LumiSection 1 at 18-Jul-2013 10:22:26.643 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 800
+Begin processing the 10th record. Run 203832, Event 666374, LumiSection 1 at 18-Jul-2013 10:22:26.851 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 852
+Begin processing the 11th record. Run 203832, Event 486238, LumiSection 1 at 18-Jul-2013 10:22:27.067 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 903
+Begin processing the 12th record. Run 203832, Event 845454, LumiSection 1 at 18-Jul-2013 10:22:28.238 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 584
+Begin processing the 13th record. Run 203832, Event 75000, LumiSection 1 at 18-Jul-2013 10:22:28.399 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 387
+Begin processing the 14th record. Run 203832, Event 210936, LumiSection 1 at 18-Jul-2013 10:22:28.525 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 726
+Begin processing the 15th record. Run 203832, Event 55064, LumiSection 1 at 18-Jul-2013 10:22:28.747 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 890
+Begin processing the 16th record. Run 203832, Event 809952, LumiSection 1 at 18-Jul-2013 10:22:28.978 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 453
+Begin processing the 17th record. Run 203832, Event 763336, LumiSection 1 at 18-Jul-2013 10:22:29.116 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 546
+Begin processing the 18th record. Run 203832, Event 713000, LumiSection 1 at 18-Jul-2013 10:22:29.287 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1137
+Begin processing the 19th record. Run 203832, Event 104312, LumiSection 1 at 18-Jul-2013 10:22:29.566 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1090
+Begin processing the 20th record. Run 203832, Event 89400, LumiSection 1 at 18-Jul-2013 10:22:29.828 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1681
+Begin processing the 21st record. Run 203832, Event 506200, LumiSection 1 at 18-Jul-2013 10:22:30.543 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 881
+Begin processing the 22nd record. Run 203832, Event 327200, LumiSection 1 at 18-Jul-2013 10:22:30.778 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 581
+Begin processing the 23rd record. Run 203832, Event 482448, LumiSection 1 at 18-Jul-2013 10:22:30.948 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 281
+Begin processing the 24th record. Run 203832, Event 456232, LumiSection 1 at 18-Jul-2013 10:22:31.036 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 574
+Begin processing the 25th record. Run 203832, Event 525264, LumiSection 1 at 18-Jul-2013 10:22:31.504 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 581
+Begin processing the 26th record. Run 203832, Event 323144, LumiSection 1 at 18-Jul-2013 10:22:31.667 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 994
+Begin processing the 27th record. Run 203832, Event 684936, LumiSection 1 at 18-Jul-2013 10:22:31.915 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 929
+Begin processing the 28th record. Run 203832, Event 18601, LumiSection 1 at 18-Jul-2013 10:22:32.292 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 559
+Begin processing the 29th record. Run 203832, Event 771073, LumiSection 1 at 18-Jul-2013 10:22:32.437 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1100
+Begin processing the 30th record. Run 203832, Event 684689, LumiSection 1 at 18-Jul-2013 10:22:32.694 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1566
+Begin processing the 31st record. Run 203832, Event 486385, LumiSection 1 at 18-Jul-2013 10:22:33.028 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 574
+Begin processing the 32nd record. Run 203832, Event 1617, LumiSection 1 at 18-Jul-2013 10:22:33.188 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 618
+Begin processing the 33rd record. Run 203832, Event 517881, LumiSection 1 at 18-Jul-2013 10:22:33.350 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 632
+Begin processing the 34th record. Run 203832, Event 598425, LumiSection 1 at 18-Jul-2013 10:22:33.518 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 528
+Begin processing the 35th record. Run 203832, Event 58729, LumiSection 1 at 18-Jul-2013 10:22:33.666 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 554
+Begin processing the 36th record. Run 203832, Event 661305, LumiSection 1 at 18-Jul-2013 10:22:33.910 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 765
+Begin processing the 37th record. Run 203832, Event 701625, LumiSection 1 at 18-Jul-2013 10:22:34.106 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 571
+Begin processing the 38th record. Run 203832, Event 506972, LumiSection 1 at 18-Jul-2013 10:22:34.267 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 458
+Begin processing the 39th record. Run 203832, Event 209932, LumiSection 1 at 18-Jul-2013 10:22:34.391 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 734
+Begin processing the 40th record. Run 203832, Event 705244, LumiSection 1 at 18-Jul-2013 10:22:34.548 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 664
+Begin processing the 41st record. Run 203832, Event 223852, LumiSection 1 at 18-Jul-2013 10:22:34.729 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 707
+Begin processing the 42nd record. Run 203832, Event 610364, LumiSection 1 at 18-Jul-2013 10:22:34.915 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 834
+Begin processing the 43rd record. Run 203832, Event 484220, LumiSection 1 at 18-Jul-2013 10:22:35.125 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1075
+Begin processing the 44th record. Run 203832, Event 49420, LumiSection 1 at 18-Jul-2013 10:22:35.391 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1097
+Begin processing the 45th record. Run 203832, Event 696540, LumiSection 1 at 18-Jul-2013 10:22:35.462 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 574
+Begin processing the 46th record. Run 203832, Event 533948, LumiSection 1 at 18-Jul-2013 10:22:35.507 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 904
+Begin processing the 47th record. Run 203832, Event 504716, LumiSection 1 at 18-Jul-2013 10:22:35.828 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 918
+Begin processing the 48th record. Run 203832, Event 200236, LumiSection 1 at 18-Jul-2013 10:22:35.889 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 577
+Begin processing the 49th record. Run 203832, Event 841484, LumiSection 1 at 18-Jul-2013 10:22:35.932 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 835
+Begin processing the 50th record. Run 203832, Event 768988, LumiSection 1 at 18-Jul-2013 10:22:35.992 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 496
+Begin processing the 51st record. Run 203832, Event 730012, LumiSection 1 at 18-Jul-2013 10:22:36.032 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 713
+Begin processing the 52nd record. Run 203832, Event 459788, LumiSection 1 at 18-Jul-2013 10:22:37.303 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1104
+Begin processing the 53rd record. Run 203832, Event 110100, LumiSection 1 at 18-Jul-2013 10:22:37.372 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 970
+Begin processing the 54th record. Run 203832, Event 233908, LumiSection 1 at 18-Jul-2013 10:22:37.439 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 864
+Begin processing the 55th record. Run 203832, Event 688836, LumiSection 1 at 18-Jul-2013 10:22:37.497 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 750
+Begin processing the 56th record. Run 203832, Event 65956, LumiSection 1 at 18-Jul-2013 10:22:37.549 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 476
+Begin processing the 57th record. Run 203832, Event 595300, LumiSection 1 at 18-Jul-2013 10:22:37.585 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1083
+Begin processing the 58th record. Run 203832, Event 142980, LumiSection 1 at 18-Jul-2013 10:22:37.868 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 813
+Begin processing the 59th record. Run 203832, Event 5252, LumiSection 1 at 18-Jul-2013 10:22:38.778 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 874
+Begin processing the 60th record. Run 203832, Event 441332, LumiSection 1 at 18-Jul-2013 10:22:38.840 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 670
+Begin processing the 61st record. Run 203832, Event 313764, LumiSection 1 at 18-Jul-2013 10:22:38.885 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 597
+Begin processing the 62nd record. Run 203832, Event 530388, LumiSection 1 at 18-Jul-2013 10:22:38.930 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 660
+Begin processing the 63rd record. Run 203832, Event 79060, LumiSection 1 at 18-Jul-2013 10:22:38.976 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 681
+Begin processing the 64th record. Run 203832, Event 295060, LumiSection 1 at 18-Jul-2013 10:22:39.026 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 850
+Begin processing the 65th record. Run 203832, Event 23700, LumiSection 1 at 18-Jul-2013 10:22:39.084 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 465
+Begin processing the 66th record. Run 203832, Event 143252, LumiSection 1 at 18-Jul-2013 10:22:39.124 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 397
+Begin processing the 67th record. Run 203832, Event 38868, LumiSection 1 at 18-Jul-2013 10:22:39.492 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 926
+Begin processing the 68th record. Run 203832, Event 237220, LumiSection 1 at 18-Jul-2013 10:22:40.425 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 587
+Begin processing the 69th record. Run 203832, Event 668996, LumiSection 1 at 18-Jul-2013 10:22:40.469 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 482
+Begin processing the 70th record. Run 203832, Event 638948, LumiSection 1 at 18-Jul-2013 10:22:40.512 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 658
+Begin processing the 71st record. Run 203832, Event 788164, LumiSection 1 at 18-Jul-2013 10:22:40.560 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 816
+Begin processing the 72nd record. Run 203832, Event 166162, LumiSection 1 at 18-Jul-2013 10:22:40.888 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 487
+Begin processing the 73rd record. Run 203832, Event 591298, LumiSection 1 at 18-Jul-2013 10:22:40.930 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 706
+Begin processing the 74th record. Run 203832, Event 482898, LumiSection 1 at 18-Jul-2013 10:22:40.986 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 365
+Begin processing the 75th record. Run 203832, Event 686354, LumiSection 1 at 18-Jul-2013 10:22:41.123 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1231
+Begin processing the 76th record. Run 203832, Event 880866, LumiSection 1 at 18-Jul-2013 10:22:42.340 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 660
+Begin processing the 77th record. Run 203832, Event 804834, LumiSection 1 at 18-Jul-2013 10:22:42.486 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1193
+Begin processing the 78th record. Run 203832, Event 820082, LumiSection 1 at 18-Jul-2013 10:22:42.567 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 294
+Begin processing the 79th record. Run 203832, Event 565538, LumiSection 1 at 18-Jul-2013 10:22:42.599 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 751
+Begin processing the 80th record. Run 203832, Event 69090, LumiSection 1 at 18-Jul-2013 10:22:42.647 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 911
+Begin processing the 81st record. Run 203832, Event 132642, LumiSection 1 at 18-Jul-2013 10:22:42.716 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 868
+Begin processing the 82nd record. Run 203832, Event 238818, LumiSection 1 at 18-Jul-2013 10:22:42.889 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 715
+Begin processing the 83rd record. Run 203832, Event 373938, LumiSection 1 at 18-Jul-2013 10:22:42.940 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 403
+Begin processing the 84th record. Run 203832, Event 369842, LumiSection 1 at 18-Jul-2013 10:22:43.614 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 287
+Begin processing the 85th record. Run 203832, Event 291442, LumiSection 1 at 18-Jul-2013 10:22:44.029 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 879
+Begin processing the 86th record. Run 203832, Event 45634, LumiSection 1 at 18-Jul-2013 10:22:44.091 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1081
+Begin processing the 87th record. Run 203832, Event 681842, LumiSection 1 at 18-Jul-2013 10:22:44.846 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 777
+Begin processing the 88th record. Run 203832, Event 361602, LumiSection 1 at 18-Jul-2013 10:22:44.903 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 1153
+Begin processing the 89th record. Run 203832, Event 396562, LumiSection 1 at 18-Jul-2013 10:22:44.976 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 589
+Begin processing the 90th record. Run 203832, Event 530914, LumiSection 1 at 18-Jul-2013 10:22:45.023 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 812
+Begin processing the 91st record. Run 203832, Event 827746, LumiSection 1 at 18-Jul-2013 10:22:45.078 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 462
+Begin processing the 92nd record. Run 203832, Event 557186, LumiSection 1 at 18-Jul-2013 10:22:45.116 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 353
+Begin processing the 93rd record. Run 203832, Event 801714, LumiSection 1 at 18-Jul-2013 10:22:45.142 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 970
+Begin processing the 94th record. Run 203832, Event 209569, LumiSection 1 at 18-Jul-2013 10:22:45.208 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 931
+Begin processing the 95th record. Run 203832, Event 71737, LumiSection 1 at 18-Jul-2013 10:22:46.433 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 779
+Begin processing the 96th record. Run 203832, Event 299857, LumiSection 1 at 18-Jul-2013 10:22:46.500 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 495
+Begin processing the 97th record. Run 203832, Event 779521, LumiSection 1 at 18-Jul-2013 10:22:46.782 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 600
+Begin processing the 98th record. Run 203832, Event 541881, LumiSection 1 at 18-Jul-2013 10:22:46.830 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 861
+Begin processing the 99th record. Run 203832, Event 489242, LumiSection 1 at 18-Jul-2013 10:22:46.888 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 819
+Begin processing the 100th record. Run 203832, Event 140858, LumiSection 1 at 18-Jul-2013 10:22:46.946 CEST
+ESHitSkimLoose:: in analyze().
+ number of tracks 858
+18-Jul-2013 10:22:47 CEST  Closed file root://eoscms//eos/cms/store/group/alca_ecalcalib/ESalignment/5_3_2_p4/small_Run2012D_bkup/00DE8F3C-890B-E211-8285-001D09F2AD4D.root
+In ESHitSkimLoose.endJob
+
+ --------------------------------------------- 
+ number of events processed  100
+ Last Event number # 140858
+ --------------------------------------------- 
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 fileAction           -s file_close                             1        1
+    2 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 fileAction           PostEndRun                        
+    2 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+System                  3                   3
+In ESHitSkimLoose destructor

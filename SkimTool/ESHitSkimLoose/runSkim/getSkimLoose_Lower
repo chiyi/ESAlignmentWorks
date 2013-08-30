@@ -1,0 +1,33 @@
+
+  )
+)
+
+process.myFilter = cms.EDFilter('ESHitSkimLoose')
+
+process.myfilter = cms.Sequence(process.myFilter)
+
+process.myPath = cms.Path(process.myfilter)
+
+process.mySelection = cms.PSet(
+ SelectEvents = cms.untracked.PSet(
+       SelectEvents = cms.vstring('myPath')
+ )
+)
+
+
+process.out = cms.OutputModule("PoolOutputModule",
+     process.mySelection,
+     outputCommands = cms.untracked.vstring('drop *',
+       'keep *_ecalPreshowerRecHit_*_*',
+       'keep *_generalTracks_*_*',
+       'keep *_offlineBeamSpot_*_*',
+       'keep *_siPixelClusters_*_*',
+       'keep *_siStripClusters_*_*'
+      ),
+     fileName = cms.untracked.string('file_ESSkim_PNUM.root')
+)
+ 
+process.p = cms.EndPath(process.out)
+
+
+process.schedule = cms.Schedule(process.myPath,process.p)

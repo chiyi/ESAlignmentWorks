@@ -1,0 +1,15 @@
+<use   name="FWCore/Framework"/>
+<use   name="FWCore/Utilities"/>
+<use   name="FWCore/ParameterSet"/>
+<use   name="FWCore/Common"/>
+<use   name="Geometry/CaloGeometry"/>
+<use   name="Geometry/Records"/>
+<use   name="DataFormats/CaloRecHit"/>
+<use   name="DataFormats/EcalRecHit"/>
+<use   name="DataFormats/TrackReco"/>
+<use   name="RecoCaloTools/MetaCollections"/>
+<use   name="root"/>
+<flags   EDM_PLUGIN="1"/>
+<export>
+  <lib   name="1"/>
+</export>

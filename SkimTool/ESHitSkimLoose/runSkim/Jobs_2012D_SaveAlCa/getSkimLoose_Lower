@@ -1,0 +1,40 @@
+
+  )
+)
+
+#import FWCore.PythonUtilities.LumiList as LumiList
+#process.source.lumisToProcess = LumiList.LumiList(filename = 'Cert_190456-196531_8TeV_29Jun2012ReReco_Collisions12_JSON.txt').getVLuminosityBlockRange()
+
+
+
+process.myFilter = cms.EDFilter('ESHitSkimLoose')
+
+process.myfilter = cms.Sequence(process.myFilter)
+
+process.myPath = cms.Path(process.myfilter)
+
+process.mySelection = cms.PSet(
+ SelectEvents = cms.untracked.PSet(
+       SelectEvents = cms.vstring('myPath')
+ )
+)
+
+
+process.out = cms.OutputModule("PoolOutputModule",
+     process.mySelection,
+     outputCommands = cms.untracked.vstring('drop *',
+       'keep *_ecalPreshowerRecHit_*_*',
+       'keep *_generalTracks_*_*',
+       'keep *_TrackRefitter_*_*',
+       'keep *_offlineBeamSpot_*_*',
+       'keep *_siPixelClusters_*_*',
+       'keep *_siStripClusters_*_*'
+      ),
+     fileName = cms.untracked.string('file:ESSkim_wRefit.root')
+)
+ 
+process.p = cms.EndPath(process.out)
+process.p1 = cms.Path(process.TrackRefitter)
+
+process.schedule = cms.Schedule(process.p1,process.myPath,process.p)
+
